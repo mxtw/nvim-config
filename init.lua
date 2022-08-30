@@ -1,0 +1,8 @@
+require("general")
+require("plugins")
+require("tele")
+require("visual")
+require("org")
+require("lsp")
+require("debugger")
+require("keybinds")
