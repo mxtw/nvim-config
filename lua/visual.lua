@@ -6,4 +6,4 @@ vim.opt.colorcolumn = "80"
 
 vim.g.tokyonight_transparent = true
 
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme dracula")

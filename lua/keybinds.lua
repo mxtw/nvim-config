@@ -15,6 +15,7 @@ wk.register({
             path = "$HOME/.config/nvim",
             depth = 2,
         }) end, "Neovim Config Files" },
+        r = { function() tb.oldfiles() end, "Recent Files" },
     },
     n = {
         name = "notes",
@@ -39,6 +40,7 @@ wk.register({
         name = "code",
         x = {  function() tb.diagnostics() end, "Diagnostics" },
         s = {  function() tb.lsp_document_symbols() end, "Symbols" },
+        c = {  function() tb.command_history() end, "Command History" },
     },
     o = {
         name = "open",
@@ -46,6 +48,8 @@ wk.register({
     h = {
         name = "help",
         h = { function() tb.help_tags() end, "Help Tags" },
+        m = { function() tb.man_pages() end, "Man Pages" },
+        t = { function() tb.colorscheme() end, "Colorscheme" },
     },
     p = {
         name = "project",
