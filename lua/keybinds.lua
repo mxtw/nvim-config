@@ -43,6 +43,14 @@ wk.register({
     o = {
         name = "open",
     },
+    h = {
+        name = "help",
+        h = { function() tb.help_tags() end, "Help Tags" },
+    },
+    p = {
+        name = "project",
+        p = { function() te.project.project() end, "List Projects" },
+    },
     q = {
         name = "quit",
         q = { "<cmd>x<cr>", "Save Buffer and Quit" },

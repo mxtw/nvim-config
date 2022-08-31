@@ -18,11 +18,12 @@ return require("packer").startup(function(use)
     })
 
     -- telescope
-    use("nvim-telescope/telescope-file-browser.nvim")
     use({
         "nvim-telescope/telescope.nvim",
         branch = "0.1.x"
     })
+    use("nvim-telescope/telescope-project.nvim")
+    use("nvim-telescope/telescope-file-browser.nvim")
 
     -- lsp
     use("neovim/nvim-lspconfig")
@@ -53,7 +54,7 @@ return require("packer").startup(function(use)
 
     use("nvim-treesitter/nvim-treesitter")
     use({"nvim-treesitter/nvim-treesitter-context",
-        config = function() require("nvim-treesitter-context") end
+        config = function() require("treesitter-context").setup() end
     }) -- sticky headers
 
     -- other
@@ -61,7 +62,6 @@ return require("packer").startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup({}) end
     })
-
     use("nvim-orgmode/orgmode")
 
     -- Automatically set up your configuration after cloning packer.nvim
