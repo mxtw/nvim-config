@@ -28,3 +28,5 @@ vim.opt.cursorline = true
 vim.wo.signcolumn = "yes"
 
 vim.g.python3_host_prog = "/usr/bin/python3"
+
+vim.opt.splitbelow = true

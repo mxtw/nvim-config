@@ -1,12 +1,14 @@
 vim.g.mapleader = " " -- set leader key to space
 
+
 local wk = require("which-key")
 
--- plugin specific binds
+-- for plugin specific binds
 local dap = require("dap") -- for binding dap stuff
 local tb = require("telescope.builtin")
 local te = require("telescope").extensions
 
+-- which-key binds
 wk.register({
     f = {
         name = "file",
@@ -44,6 +46,8 @@ wk.register({
     },
     o = {
         name = "open",
+        t = { "<cmd>10split | term<cr>", "Open Terminal in Split" },
+        T = { "<cmd>term<cr>", "Open Terminal" },
     },
     h = {
         name = "help",
@@ -74,3 +78,6 @@ wk.register({
     ["/"] = { function() tb.live_grep() end, "Grep CWD" },
     [" "] = { function() tb.find_files() end, "Find Files" },
 }, { prefix = "<leader>" })
+
+-- other binds
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>") -- make esc key work in terminal
