@@ -10,9 +10,19 @@ require("nvim-treesitter.configs").setup({
     indent = {
         enable = true,
     },
-    ensure_installed = {"org"},
+    ensure_installed = {
+        "bash",
+        "c",
+        "go",
+        "hcl",
+        "markdown",
+        "org",
+        "python",
+        "rust",
+        "yaml",
+    },
 })
 
 require("orgmode").setup({
     org_agenda_files = {"~/org/**/*"},
-}) 
+})
