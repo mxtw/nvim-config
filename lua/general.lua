@@ -11,6 +11,7 @@ vim.opt.smartindent = true
 vim.opt.shiftwidth = 4
 vim.opt.mouse = "a"
 vim.opt.swapfile = false
+vim.opt.wrap = false
 
 vim.opt.number = true
 vim.opt.relativenumber = true

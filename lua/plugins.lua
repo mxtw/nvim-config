@@ -49,7 +49,7 @@ return require("packer").startup(function(use)
     use("folke/tokyonight.nvim")
 
     -- visual stuff
-    use("vim-airline/vim-airline")
+    use("nvim-lualine/lualine.nvim")
     use("ap/vim-css-color")
     use("folke/which-key.nvim")
     use("kyazdani42/nvim-web-devicons")
