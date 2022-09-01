@@ -24,6 +24,9 @@ wk.register({
         f = { function() te.file_browser.file_browser({
             path = "$HOME/org",
         }) end, "Org Files" },
+        s = { function() tb.live_grep({
+            cwd = "$HOME/org",
+        }) end, "Search Notes" },
     },
     g = {
         name = "git",
@@ -73,6 +76,7 @@ wk.register({
         u = { function() dap.step_out() end, "Step Out" },
         b = { function() dap.toggle_breakpoint() end, "Toggle Breakpoint" },
         B = { function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, "Set Breakpoint (conditional)" }, -- stolen from theprimeagen
+        t = { function() dap.terminate() end, "Terminate Session" },
     },
     [","] = { function() tb.buffers() end, "List Buffers" },
     ["/"] = { function() tb.live_grep() end, "Grep CWD" },
