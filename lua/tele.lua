@@ -5,7 +5,6 @@ telescope.setup({
         file_browser = {
             hijack_netrw = true, -- netrw is default vim dir viewer
             hide_parent_dir = true,
-            dir_icon = "",
             theme = "ivy",
             hidden = false,
             path = "%:p:h", -- use path of file in current buffer

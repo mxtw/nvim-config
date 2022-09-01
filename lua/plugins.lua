@@ -16,6 +16,7 @@ return require("packer").startup(function(use)
         "tanvirtin/vgit.nvim",
         config = function() require("vgit").setup() end
     })
+    use("sindrets/diffview.nvim")
 
     -- telescope
     use({
@@ -51,6 +52,7 @@ return require("packer").startup(function(use)
     use("vim-airline/vim-airline")
     use("ap/vim-css-color")
     use("folke/which-key.nvim")
+    use("kyazdani42/nvim-web-devicons")
 
     use("nvim-treesitter/nvim-treesitter")
     use({"nvim-treesitter/nvim-treesitter-context",
