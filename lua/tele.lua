@@ -3,7 +3,7 @@ local telescope = require("telescope")
 telescope.setup({
     extensions = {
         file_browser = {
-            hijack_netrw = true, -- netrw is default vim dir viewer
+            hijack_netrw = false, -- netrw is default vim dir viewer
             hide_parent_dir = true,
             theme = "ivy",
             hidden = false,
