@@ -62,6 +62,10 @@ wk.register({
         name = "project",
         p = { function() te.project.project() end, "List Projects" },
     },
+    b = {
+        name = "buffer",
+        k = { "<cmd>bd<cr>", "Close Current Buffer" },
+    },
     q = {
         name = "quit",
         q = { "<cmd>x<cr>", "Save Buffer and Quit" },

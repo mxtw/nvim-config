@@ -47,6 +47,7 @@ return require("packer").startup(function(use)
         as = "dracula"
     })
     use("folke/tokyonight.nvim")
+    use("morhetz/gruvbox")
 
     -- visual stuff
     use("nvim-lualine/lualine.nvim")
