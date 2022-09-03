@@ -19,10 +19,12 @@ require("nvim-treesitter.configs").setup({
         "c",
         "go",
         "hcl",
+        "javascript",
         "markdown",
         "org",
         "python",
         "rust",
+        "typescript",
         "yaml",
     },
 })
