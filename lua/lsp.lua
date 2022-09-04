@@ -48,6 +48,22 @@ vim.api.nvim_create_autocmd(
     { pattern = {"*.py" }, command = "Black" }
 )
 
+-- mason
+require("mason").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = {
+        "bashls",
+        "clangd",
+        "dockerls",
+        "gopls",
+        "pyright",
+        "rust_analyzer",
+        "terraformls",
+        "tsserver",
+        "yamlls",
+    }
+})
+
 local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')

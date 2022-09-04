@@ -35,6 +35,8 @@ return require("packer").startup(function(use)
     use("saadparwaiz1/cmp_luasnip")
     use("lukas-reineke/lsp-format.nvim")
     use("psf/black")
+    use("williamboman/mason.nvim")
+    use("williamboman/mason-lspconfig.nvim")
 
     -- debugging
     use("mfussenegger/nvim-dap")
