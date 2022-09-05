@@ -32,9 +32,10 @@ wk.register({
         name = "git",
         g = { "<cmd>Neogit<cr>", "Open Neogit" },
         b = { function() tb.git_branches() end , "List Branches" },
-        p = { "<cmd>VGit buffer_hunk_preview<cr>", "Preview Hunk" },
-        k = { "<cmd>VGit hunk_up<cr>", "Previous Hunk" },
-        j = { "<cmd>VGit hunk_down<cr>", "Next Hunk" },
+        p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
+        k = { "<cmd>Gitsigns prev_hunk<cr>", "Previous Hunk" },
+        j = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
+        r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset Hunk" },
     },
     w = {
         name = "window",

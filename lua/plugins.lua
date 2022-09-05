@@ -12,10 +12,7 @@ return require("packer").startup(function(use)
 
     -- git stuff
     use("TimUntersberger/neogit")
-    use({
-        "tanvirtin/vgit.nvim",
-        config = function() require("vgit").setup() end
-    })
+    use("lewis6991/gitsigns.nvim")
     use("sindrets/diffview.nvim")
 
     -- telescope
