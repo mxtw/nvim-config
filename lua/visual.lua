@@ -18,3 +18,5 @@ require("lualine").setup({
         lualine_z = { "tabs" },
     },
 })
+
+require("indent_blankline").setup()

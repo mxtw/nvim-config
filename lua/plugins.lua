@@ -53,6 +53,7 @@ return require("packer").startup(function(use)
     use("ap/vim-css-color")
     use("folke/which-key.nvim")
     use("kyazdani42/nvim-web-devicons")
+    use("lukas-reineke/indent-blankline.nvim")
 
     use("nvim-treesitter/nvim-treesitter")
     use({"nvim-treesitter/nvim-treesitter-context",
