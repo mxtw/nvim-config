@@ -9,6 +9,7 @@ return require("packer").startup(function(use)
     -- dependency stuff
     use("wbthomason/packer.nvim")
     use("nvim-lua/plenary.nvim")
+    use("nvim-lua/popup.nvim")
 
     -- git stuff
     use("TimUntersberger/neogit")
@@ -22,6 +23,7 @@ return require("packer").startup(function(use)
     })
     use("nvim-telescope/telescope-project.nvim")
     use("nvim-telescope/telescope-file-browser.nvim")
+    use("jvgrootveld/telescope-zoxide")
 
     -- lsp
     use("neovim/nvim-lspconfig")
@@ -66,6 +68,7 @@ return require("packer").startup(function(use)
         config = function() require("nvim-autopairs").setup({}) end
     })
     use("nvim-orgmode/orgmode")
+    use("justinmk/vim-sneak")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

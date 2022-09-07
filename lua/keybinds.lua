@@ -18,6 +18,7 @@ wk.register({
             depth = 2,
         }) end, "Neovim Config Files" },
         r = { function() tb.oldfiles() end, "Recent Files" },
+        d = { function() te.zoxide.list() end, "Zoxide" },
     },
     n = {
         name = "notes",
