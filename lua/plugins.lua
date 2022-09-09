@@ -43,18 +43,16 @@ return require("packer").startup(function(use)
     use("theHamsta/nvim-dap-virtual-text")
 
     -- colorschemes
-    use({
-        "dracula/vim",
-        as = "dracula"
-    })
     use("folke/tokyonight.nvim")
     use("morhetz/gruvbox")
+    use({"embark-theme/vim", as = "embark"})
+    use({"dracula/vim", as = "dracula"})
 
     -- visual stuff
     use("nvim-lualine/lualine.nvim")
     use("akinsho/bufferline.nvim")
     use("tiagovla/scope.nvim")
-    use("ap/vim-css-color")
+    use("norcalli/nvim-colorizer.lua")
     use("folke/which-key.nvim")
     use("kyazdani42/nvim-web-devicons")
     use("lukas-reineke/indent-blankline.nvim")
