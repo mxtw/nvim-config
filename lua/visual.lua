@@ -9,14 +9,24 @@ vim.cmd("colorscheme dracula")
 
 -- lualine
 require("lualine").setup({
-    options = {
-        section_separators = "",
-        component_separators = "",
+    -- tabline = {
+    --     lualine_a = { "buffers" },
+    --     lualine_z = { "tabs" },
+    -- },
+})
+
+require("bufferline").setup({
+    highlights = {
+        buffer_selected = {
+            italic = false,
+        },
     },
-    tabline = {
-        lualine_a = { "buffers" },
-        lualine_z = { "tabs" },
+    options = {
+        diagnostics = "nvim_lsp",
     },
 })
+
+-- make buffers exclusive to their tabs
+require("scope").setup()
 
 require("indent_blankline").setup()

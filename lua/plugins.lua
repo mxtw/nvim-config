@@ -52,6 +52,8 @@ return require("packer").startup(function(use)
 
     -- visual stuff
     use("nvim-lualine/lualine.nvim")
+    use("akinsho/bufferline.nvim")
+    use("tiagovla/scope.nvim")
     use("ap/vim-css-color")
     use("folke/which-key.nvim")
     use("kyazdani42/nvim-web-devicons")

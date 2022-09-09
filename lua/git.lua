@@ -3,6 +3,7 @@ require("neogit").setup({
         diffview = true,
     },
     use_magit_keybindings = true,
+    disable_commit_confirmation = true,
 })
 
 require("diffview").setup({
