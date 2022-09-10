@@ -70,6 +70,7 @@ wk.register({
     b = {
         name = "buffer",
         k = { "<cmd>bd<cr>", "Close Current Buffer" },
+        u = { "<cmd>UndotreeToggle<cr>", "Undotree" },
     },
     q = {
         name = "quit",
