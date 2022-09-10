@@ -9,7 +9,7 @@ vim.opt.concealcursor = "nc"
 require("nvim-treesitter.configs").setup({
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = {"org"},
+        additional_vim_regex_highlighting = { "org" },
     },
     indent = {
         enable = true,
@@ -30,6 +30,6 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("orgmode").setup({
-    org_agenda_files = {"~/org/**/*"},
+    org_agenda_files = { "~/org/**/*" },
     org_hide_leading_stars = true,
 })

@@ -14,25 +14,28 @@ wk.register({
         name = "file",
         f = { function() te.file_browser.file_browser() end, "File Browser" },
         p = { function() te.file_browser.file_browser({
-            path = "$HOME/.config/nvim",
-            depth = 2,
-        }) end, "Neovim Config Files" },
+                path = "$HOME/.config/nvim",
+                depth = 2,
+            })
+        end, "Neovim Config Files" },
         r = { function() tb.oldfiles() end, "Recent Files" },
         d = { function() te.zoxide.list() end, "Zoxide" },
     },
     n = {
         name = "notes",
         f = { function() te.file_browser.file_browser({
-            path = "$HOME/org",
-        }) end, "Org Files" },
+                path = "$HOME/org",
+            })
+        end, "Org Files" },
         s = { function() tb.live_grep({
-            cwd = "$HOME/org",
-        }) end, "Search Notes" },
+                cwd = "$HOME/org",
+            })
+        end, "Search Notes" },
     },
     g = {
         name = "git",
         g = { "<cmd>Neogit<cr>", "Open Neogit" },
-        b = { function() tb.git_branches() end , "List Branches" },
+        b = { function() tb.git_branches() end, "List Branches" },
         p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
         k = { "<cmd>Gitsigns prev_hunk<cr>", "Previous Hunk" },
         j = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
@@ -45,9 +48,9 @@ wk.register({
     },
     c = {
         name = "code",
-        x = {  function() tb.diagnostics() end, "Diagnostics" },
-        s = {  function() tb.lsp_document_symbols() end, "Symbols" },
-        c = {  function() tb.command_history() end, "Command History" },
+        x = { function() tb.diagnostics() end, "Diagnostics" },
+        s = { function() tb.lsp_document_symbols() end, "Symbols" },
+        c = { function() tb.command_history() end, "Command History" },
     },
     o = {
         name = "open",

@@ -17,11 +17,11 @@ cmp.setup({
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
         ["<Up>"] = cmp.mapping.select_prev_item(),
         ['<C-Space>'] = function(fallback)
-          if cmp.visible() then
-            cmp.close()
-          else
-            cmp.complete()
-          end
+            if cmp.visible() then
+                cmp.close()
+            else
+                cmp.complete()
+            end
         end,
         -- TODO scroll docs
 
@@ -32,6 +32,8 @@ cmp.setup({
         { name = "nvim_lsp" },
         { name = "buffer" },
         { name = "orgmode" },
+        { name = "path" },
+        { name = "crates" },
     },
 })
 
@@ -44,8 +46,8 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 require("lsp-format").setup({})
 
 vim.api.nvim_create_autocmd(
-    {"BufWritePre"},
-    { pattern = {"*.py" }, command = "Black" }
+    { "BufWritePre" },
+    { pattern = { "*.py" }, command = "Black" }
 )
 
 -- mason
@@ -61,8 +63,12 @@ require("mason-lspconfig").setup({
         "terraformls",
         "tsserver",
         "yamlls",
+        "lua-language-server",
     }
 })
+
+-- crates.io
+require("crates").setup()
 
 local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
@@ -72,7 +78,7 @@ local on_attach = function(client, bufnr)
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -81,7 +87,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
     vim.keymap.set('n', '<space>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts)
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
@@ -134,4 +140,25 @@ require("lspconfig").bashls.setup({
 require("lspconfig").tsserver.setup({
     on_attach = on_attach,
     capabilities = capabilities,
+})
+
+require("lspconfig").sumneko_lua.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+        Lua = {
+            runtime = {
+                version = "LuaJIT",
+            },
+            diagnostics = {
+                globals = { "vim" },
+            },
+            telemetry = {
+                enable = false,
+            },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true),
+            }
+        },
+    },
 })

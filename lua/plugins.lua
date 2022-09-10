@@ -1,7 +1,8 @@
 local fn = vim.fn
-local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
+    packer_bootstrap = fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim",
+        install_path })
     vim.cmd [[packadd packer.nvim]]
 end
 
@@ -27,15 +28,19 @@ return require("packer").startup(function(use)
 
     -- lsp
     use("neovim/nvim-lspconfig")
-    use("hrsh7th/cmp-nvim-lsp")
-    use("hrsh7th/cmp-buffer")
-    use("hrsh7th/nvim-cmp")
     use("L3MON4D3/LuaSnip")
-    use("saadparwaiz1/cmp_luasnip")
     use("lukas-reineke/lsp-format.nvim")
     use("psf/black")
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
+    use("saecki/crates.nvim")
+
+    -- completion
+    use("hrsh7th/cmp-nvim-lsp")
+    use("hrsh7th/cmp-buffer")
+    use("hrsh7th/cmp-path")
+    use("saadparwaiz1/cmp_luasnip")
+    use("hrsh7th/nvim-cmp")
 
     -- debugging
     use("mfussenegger/nvim-dap")
@@ -45,8 +50,8 @@ return require("packer").startup(function(use)
     -- colorschemes
     use("folke/tokyonight.nvim")
     use("morhetz/gruvbox")
-    use({"embark-theme/vim", as = "embark"})
-    use({"dracula/vim", as = "dracula"})
+    use({ "embark-theme/vim", as = "embark" })
+    use({ "dracula/vim", as = "dracula" })
 
     -- visual stuff
     use("nvim-lualine/lualine.nvim")
@@ -58,7 +63,7 @@ return require("packer").startup(function(use)
     use("lukas-reineke/indent-blankline.nvim")
 
     use("nvim-treesitter/nvim-treesitter")
-    use({"nvim-treesitter/nvim-treesitter-context",
+    use({ "nvim-treesitter/nvim-treesitter-context",
         config = function() require("treesitter-context").setup() end
     }) -- sticky headers
 
