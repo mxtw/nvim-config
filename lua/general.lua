@@ -1,3 +1,5 @@
+local nvim_share = os.getenv("HOME") .. "/.local/share/nvim"
+
 vim.opt.encoding = "utf-8"
 vim.opt.langmenu = "en_US.UTF-8"
 
@@ -10,8 +12,15 @@ vim.opt.backspace = "2"
 vim.opt.smartindent = true
 vim.opt.shiftwidth = 4
 vim.opt.mouse = "a"
-vim.opt.swapfile = false
 vim.opt.wrap = false
+
+vim.opt.swapfile = true
+vim.opt.directory = nvim_share .. "/swap"
+
+vim.opt.undodir = nvim_share .. "/undo"
+vim.opt.undofile = true
+vim.opt.undolevels = 1000
+vim.opt.undoreload = 10000
 
 vim.opt.ignorecase = true
 vim.opt.number = true
