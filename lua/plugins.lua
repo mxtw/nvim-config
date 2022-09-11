@@ -73,7 +73,6 @@ return require("packer").startup(function(use)
         config = function() require("nvim-autopairs").setup({}) end
     })
     use("nvim-orgmode/orgmode")
-    use("justinmk/vim-sneak")
     use("mbbill/undotree")
 
     -- Automatically set up your configuration after cloning packer.nvim
