@@ -1,6 +1,14 @@
 local telescope = require("telescope")
 
 telescope.setup({
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-j>"] = "move_selection_next",
+                ["<C-k>"] = "move_selection_previous",
+            }
+        }
+    },
     extensions = {
         file_browser = {
             hijack_netrw = false, -- netrw is default vim dir viewer

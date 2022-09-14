@@ -5,7 +5,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.background = "dark"
 vim.g.embark_terminal_italics = 1
 
-vim.cmd("colorscheme embark")
+vim.cmd("colorscheme tokyonight-night")
 -- vim.cmd("hi Normal guibg=NONE") -- no background for dracula
 
 -- lualine
