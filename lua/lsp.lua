@@ -103,9 +103,12 @@ require("lspconfig").pyright.setup({
     capabilities = capabilities,
 })
 
-require("lspconfig").rust_analyzer.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
+-- rust handled by rust-tools.nvim
+require("rust-tools").setup({
+    server = {
+        on_attach = on_attach,
+        standalone = false,
+    }
 })
 
 require("lspconfig").gopls.setup({

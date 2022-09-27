@@ -74,8 +74,8 @@ wk.register({
     },
     q = {
         name = "quit",
-        q = { "<cmd>x<cr>", "Save Buffer and Quit" },
-        Q = { "<cmd>q!<cr>", "Quit without saving" },
+        q = { "<cmd>xa<cr>", "Save Buffers and Quit" },
+        Q = { "<cmd>qa!<cr>", "Quit without saving" },
     },
     d = {
         name = "debug",

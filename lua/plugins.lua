@@ -30,10 +30,15 @@ return require("packer").startup(function(use)
     use("neovim/nvim-lspconfig")
     use("L3MON4D3/LuaSnip")
     use("lukas-reineke/lsp-format.nvim")
-    use("psf/black")
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
+
+    -- filetype specifics
+    --- rust
     use("saecki/crates.nvim")
+    use("simrat39/rust-tools.nvim")
+    --- python
+    use("psf/black")
 
     -- completion
     use("hrsh7th/cmp-nvim-lsp")
