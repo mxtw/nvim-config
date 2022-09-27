@@ -39,6 +39,8 @@ return require("packer").startup(function(use)
     use("simrat39/rust-tools.nvim")
     --- python
     use("psf/black")
+    --- csv
+    use("chrisbra/csv.vim")
 
     -- completion
     use("hrsh7th/cmp-nvim-lsp")
@@ -54,7 +56,7 @@ return require("packer").startup(function(use)
 
     -- colorschemes
     use("folke/tokyonight.nvim")
-    use("morhetz/gruvbox")
+    use("gruvbox-community/gruvbox")
     use({ "embark-theme/vim", as = "embark" })
     use({ "dracula/vim", as = "dracula" })
 

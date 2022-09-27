@@ -8,6 +8,22 @@ vim.g.embark_terminal_italics = 1
 vim.cmd("colorscheme tokyonight-night")
 -- vim.cmd("hi Normal guibg=NONE") -- no background for dracula
 
+-- csv.vim autocommands
+vim.api.nvim_create_autocmd(
+    { "BufRead", "BufWritePost" },
+    {
+        pattern = { "*.csv" },
+        command = "%ArrangeColumn",
+    }
+)
+vim.api.nvim_create_autocmd(
+    "BufWritePre",
+    {
+        pattern = { "*.csv" },
+        command = "%UnArrangeColumn",
+    }
+)
+
 -- lualine
 require("lualine").setup({
     -- tabline = {
