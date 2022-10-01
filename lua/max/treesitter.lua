@@ -1,11 +1,3 @@
-local org = require("orgmode")
-
-org.setup_ts_grammar()
-
--- conceal links
-vim.opt.conceallevel = 2
-vim.opt.concealcursor = "nc"
-
 require("nvim-treesitter.configs").setup({
     highlight = {
         enable = true,
@@ -19,7 +11,9 @@ require("nvim-treesitter.configs").setup({
         "c",
         "go",
         "hcl",
+        "http",
         "javascript",
+        "json",
         "markdown",
         "org",
         "python",
@@ -27,9 +21,4 @@ require("nvim-treesitter.configs").setup({
         "typescript",
         "yaml",
     },
-})
-
-require("orgmode").setup({
-    org_agenda_files = { "~/org/**/*" },
-    org_hide_leading_stars = true,
 })

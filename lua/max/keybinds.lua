@@ -51,6 +51,7 @@ wk.register({
         x = { function() tb.diagnostics() end, "Diagnostics" },
         s = { function() tb.lsp_document_symbols() end, "Symbols" },
         c = { function() tb.command_history() end, "Command History" },
+        r = { "<Plug>RestNvim<cr>", "Run HTTP-Request under Cursor" },
     },
     o = {
         name = "open",

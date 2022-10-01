@@ -41,3 +41,7 @@ vim.wo.signcolumn = "yes"
 vim.g.python3_host_prog = "/usr/bin/python3"
 
 vim.opt.splitbelow = true
+
+-- conceal links
+vim.opt.conceallevel = 2
+vim.opt.concealcursor = "nc"
