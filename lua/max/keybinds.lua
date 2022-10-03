@@ -15,7 +15,7 @@ wk.register({
         f = { function() te.file_browser.file_browser() end, "File Browser" },
         p = { function() te.file_browser.file_browser({
                 path = "$HOME/.config/nvim",
-                depth = 2,
+                depth = 3,
             })
         end, "Neovim Config Files" },
         r = { function() tb.oldfiles() end, "Recent Files" },
@@ -51,12 +51,14 @@ wk.register({
         x = { function() tb.diagnostics() end, "Diagnostics" },
         s = { function() tb.lsp_document_symbols() end, "Symbols" },
         c = { function() tb.command_history() end, "Command History" },
-        r = { "<Plug>RestNvim<cr>", "Run HTTP-Request under Cursor" },
+        r = { name = "rest",
+            r = { "<Plug>RestNvim<cr>", "Run HTTP-Request under Cursor" },
+            p = { "<Plug>RestNvimPreview<cr>", "Preview HTTP-Request" },
+        },
     },
     o = {
         name = "open",
-        t = { "<cmd>10split | term<cr>", "Open Terminal in Split" },
-        T = { "<cmd>term<cr>", "Open Terminal" },
+        t = { "<cmd>ToggleTerm<cr>", "Open Terminal in Split" },
     },
     h = {
         name = "help",
