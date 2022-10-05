@@ -22,3 +22,7 @@ require("nvim-treesitter.configs").setup({
         "yaml",
     },
 })
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
