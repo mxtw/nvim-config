@@ -49,12 +49,8 @@ wk.register({
     c = {
         name = "code",
         x = { function() tb.diagnostics() end, "Diagnostics" },
-        s = { function() tb.lsp_document_symbols() end, "Symbols" },
-        c = { function() tb.command_history() end, "Command History" },
-        r = { name = "rest",
-            r = { "<Plug>RestNvim<cr>", "Run HTTP-Request under Cursor" },
-            p = { "<Plug>RestNvimPreview<cr>", "Preview HTTP-Request" },
-        },
+        s = { function() tb.lsp_document_symbols() end, "Workspace Symbols" },
+        S = { function() tb.lsp_workspace_symbols() end, "Symbols" },
     },
     o = {
         name = "open",

@@ -18,12 +18,10 @@ return require("packer").startup(function(use)
     use("sindrets/diffview.nvim")
 
     -- telescope
-    use({
-        "nvim-telescope/telescope.nvim",
-        branch = "0.1.x"
-    })
+    use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
     use("nvim-telescope/telescope-project.nvim")
     use("nvim-telescope/telescope-file-browser.nvim")
+    use("nvim-telescope/telescope-ui-select.nvim")
     use("jvgrootveld/telescope-zoxide")
 
     -- lsp
@@ -57,8 +55,6 @@ return require("packer").startup(function(use)
     -- colorschemes
     use("folke/tokyonight.nvim")
     use("gruvbox-community/gruvbox")
-    use({ "embark-theme/vim", as = "embark" })
-    use({ "dracula/vim", as = "dracula" })
 
     -- visual stuff
     use("nvim-lualine/lualine.nvim")
@@ -70,15 +66,12 @@ return require("packer").startup(function(use)
     use("lukas-reineke/indent-blankline.nvim")
 
     use("nvim-treesitter/nvim-treesitter")
-    use({ "nvim-treesitter/nvim-treesitter-context",
-        config = function() require("treesitter-context").setup() end
-    }) -- sticky headers
+    use("nvim-treesitter/nvim-treesitter-context")
 
     -- other
     use("windwp/nvim-autopairs")
     use("nvim-orgmode/orgmode")
     use("mbbill/undotree")
-    use("rest-nvim/rest.nvim")
     use("akinsho/toggleterm.nvim")
 
     -- Automatically set up your configuration after cloning packer.nvim
