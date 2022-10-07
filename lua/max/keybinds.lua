@@ -94,3 +94,4 @@ wk.register({
 
 -- other binds
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>") -- make esc key work in terminal
+vim.keymap.set("n", "<Leader>.", "<C-^>") -- alternate-file to more convenient keybind
