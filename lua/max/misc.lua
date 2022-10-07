@@ -1,9 +1,3 @@
--- rest client
-require("rest-nvim").setup({
-    result_split_horizontal = true,
-    result_split_in_place = true,
-})
-
 -- autopairs
 require("nvim-autopairs").setup()
 
