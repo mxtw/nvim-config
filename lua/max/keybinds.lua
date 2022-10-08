@@ -52,6 +52,10 @@ wk.register({
         s = { function() tb.lsp_document_symbols() end, "Workspace Symbols" },
         S = { function() tb.lsp_workspace_symbols() end, "Symbols" },
     },
+    a = {
+        name = "actions",
+        [";"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment linewise", mode = "v" },
+    },
     o = {
         name = "open",
         t = { "<cmd>ToggleTerm<cr>", "Open Terminal in Split" },

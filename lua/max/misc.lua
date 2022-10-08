@@ -11,3 +11,10 @@ require("orgmode").setup_ts_grammar()
 
 -- toggleterm
 require("toggleterm").setup()
+
+require("Comment").setup({
+    mappings = {
+        basic = false,
+        extra = false,
+    },
+})
