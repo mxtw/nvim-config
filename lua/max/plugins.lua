@@ -21,7 +21,6 @@ return require("packer").startup(function(use)
     use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
     use("nvim-telescope/telescope-project.nvim")
     use("nvim-telescope/telescope-file-browser.nvim")
-    use("nvim-telescope/telescope-ui-select.nvim")
     use("jvgrootveld/telescope-zoxide")
 
     -- lsp
@@ -74,6 +73,8 @@ return require("packer").startup(function(use)
     use("mbbill/undotree")
     use("akinsho/toggleterm.nvim")
     use("numToStr/Comment.nvim")
+
+    use("stevearc/dressing.nvim")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
