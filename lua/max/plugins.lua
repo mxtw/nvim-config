@@ -58,6 +58,7 @@ return require("packer").startup(function(use)
     -- visual stuff
     use("nvim-lualine/lualine.nvim")
     use("akinsho/bufferline.nvim")
+    use("stevearc/dressing.nvim")
     use("tiagovla/scope.nvim")
     use("norcalli/nvim-colorizer.lua")
     use("folke/which-key.nvim")
@@ -73,8 +74,7 @@ return require("packer").startup(function(use)
     use("mbbill/undotree")
     use("akinsho/toggleterm.nvim")
     use("numToStr/Comment.nvim")
-
-    use("stevearc/dressing.nvim")
+    use("stevearc/overseer.nvim")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
