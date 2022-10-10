@@ -61,6 +61,7 @@ wk.register({
     o = {
         name = "open",
         t = { "<cmd>ToggleTerm<cr>", "Open Terminal in Split" },
+        T = { "<cmd>ToggleTerm direction=tab<cr>", "Open Terminal in Tab" },
     },
     h = {
         name = "help",
