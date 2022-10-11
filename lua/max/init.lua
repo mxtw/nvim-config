@@ -1,6 +1,7 @@
 require("max.debugger")
 require("max.general")
 require("max.git")
+require("max.custom")
 require("max.keybinds")
 require("max.lsp")
 require("max.misc")

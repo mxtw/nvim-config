@@ -53,6 +53,7 @@ wk.register({
         S = { function() tb.lsp_workspace_symbols() end, "Symbols" },
         c = { "<cmd>OverseerRun<cr>", "Overseer Run" },
         t = { "<cmd>OverseerToggle<cr>", "Overseer Toggle" },
+        D = { function() toggle_diagnostics() end, "Toggle Diagnostics" },
     },
     a = {
         name = "actions",
