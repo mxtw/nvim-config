@@ -45,6 +45,10 @@ wk.register({
         name = "window",
         s = { "<cmd>split<cr>", "Horizontal Split" },
         v = { "<cmd>vsplit<cr>", "Vertical Split" },
+        l = { "<cmd>vertical resize +10<cr>", "increase width" },
+        h = { "<cmd>vertical resize -10<cr>", "decrease width" },
+        k = { "<cmd>resize +5<cr>", "increase height" },
+        j = { "<cmd>resize -5<cr>", "decrease heigth" },
     },
     c = {
         name = "code",
@@ -52,8 +56,13 @@ wk.register({
         s = { function() tb.lsp_document_symbols() end, "Workspace Symbols" },
         S = { function() tb.lsp_workspace_symbols() end, "Symbols" },
         c = { "<cmd>OverseerRun<cr>", "Overseer Run" },
-        t = { "<cmd>OverseerToggle<cr>", "Overseer Toggle" },
         D = { function() toggle_diagnostics() end, "Toggle Diagnostics" },
+        o = {
+            name = "overseer",
+            t = { "<cmd>OverseerToggle<cr>", "Toggle" },
+            w = { "<cmd>OverseerQuickAction watch<cr>", "Watch last task" },
+            s = { "<cmd>OverseerQuickAction open hsplit<cr>", "Open task in split" },
+        },
     },
     a = {
         name = "actions",
