@@ -58,7 +58,7 @@ require("mason-lspconfig").setup({
         "clangd",
         "dockerls",
         "gopls",
-        "lua-language-server",
+        "sumneko_lua",
         "pyright",
         "rust_analyzer",
         "terraformls",
