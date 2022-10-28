@@ -54,6 +54,7 @@ return require("packer").startup(function(use)
     -- colorschemes
     use("folke/tokyonight.nvim")
     use("gruvbox-community/gruvbox")
+    use({ "catppuccin/nvim", as = "catppuccin" })
 
     -- visual stuff
     use("nvim-lualine/lualine.nvim")

@@ -5,7 +5,8 @@ vim.opt.colorcolumn = "80"
 vim.opt.background = "dark"
 vim.g.embark_terminal_italics = 1
 
-vim.cmd("colorscheme tokyonight-night")
+require("catppuccin").setup()
+vim.cmd("colorscheme catppuccin-mocha")
 -- vim.cmd("hi Normal guibg=NONE") -- no background for dracula
 
 -- csv.vim autocommands
