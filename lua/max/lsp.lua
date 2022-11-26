@@ -50,6 +50,11 @@ vim.api.nvim_create_autocmd(
     { pattern = { "*.py" }, command = "Black" }
 )
 
+vim.api.nvim_create_autocmd(
+    { "BufWritePre" },
+    { pattern = { "*.tsx,*.ts,*.jsx,*.js" }, command = "EslintFixAll" }
+)
+
 -- mason
 require("mason").setup()
 require("mason-lspconfig").setup({
@@ -57,10 +62,11 @@ require("mason-lspconfig").setup({
         "bashls",
         "clangd",
         "dockerls",
+        "eslint",
         "gopls",
-        "sumneko_lua",
         "pyright",
         "rust_analyzer",
+        "sumneko_lua",
         "terraformls",
         "tsserver",
         "yamlls",
@@ -78,6 +84,31 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     require("lsp-format").on_attach(client)
+
+    -- Mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+    -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+    -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+    vim.keymap.set('n', '<space>cd', vim.diagnostic.open_float, bufopts)
+    -- vim.keymap.set('n', '<space>wl', function()
+    --     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    -- end, bufopts)
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', 'gr', function() tb.lsp_references() end, bufopts)
+    vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+end
+
+local on_attach_noformat = function(client, bufnr)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -145,8 +176,16 @@ require("lspconfig").bashls.setup({
 })
 
 require("lspconfig").tsserver.setup({
+    on_attach = on_attach_noformat,
+    capabilities = capabilities,
+})
+
+require("lspconfig").eslint.setup({
     on_attach = on_attach,
     capabilities = capabilities,
+    settings = {
+        format = true,
+    },
 })
 
 require("lspconfig").hls.setup({
