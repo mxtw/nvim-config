@@ -24,8 +24,10 @@ return require("packer").startup(function(use)
     use("jvgrootveld/telescope-zoxide")
 
     -- lsp
+    use("VonHeikemen/lsp-zero.nvim")
     use("neovim/nvim-lspconfig")
     use("L3MON4D3/LuaSnip")
+    use("rafamadriz/friendly-snippets")
     use("lukas-reineke/lsp-format.nvim")
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
