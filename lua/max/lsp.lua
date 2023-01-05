@@ -49,16 +49,6 @@ lsp.on_attach(
     end
 )
 
--- diagnostics
-vim.diagnostic.config({
-    virtual_text = true,
-    signs = true,
-    update_in_insert = false,
-    underline = true,
-    severity_sort = false,
-    float = true,
-})
-
 -- rust specifics
 require("crates").setup()
 
@@ -75,3 +65,14 @@ vim.api.nvim_create_autocmd(
     { "BufWritePre" },
     { pattern = { "*.py" }, command = "Black" }
 )
+
+-- diagnostics
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = false,
+    update_in_insert = false,
+    underline = true,
+    severity_sort = false,
+    float = true,
+})
+
