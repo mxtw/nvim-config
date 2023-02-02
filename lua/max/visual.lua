@@ -48,6 +48,8 @@ require("bufferline").setup({
 
 require("notify").setup()
 
+require("org-bullets").setup()
+
 -- make buffers exclusive to their tabs
 require("scope").setup()
 
