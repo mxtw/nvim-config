@@ -58,3 +58,17 @@ overseer.register_template({
         filetype = { "go" },
     },
 })
+
+-- latex templates
+overseer.register_template({
+    name = "latexmk pdf",
+    builder = function(params)
+        return {
+            cmd = { "latexmk" },
+            args = { "-pdf", vim.fn.expand("%:p") },
+        }
+    end,
+    condition = {
+        filetype = { "tex" },
+    },
+})

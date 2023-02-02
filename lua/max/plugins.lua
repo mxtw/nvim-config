@@ -67,6 +67,7 @@ return require("packer").startup(function(use)
     use("folke/which-key.nvim")
     use("kyazdani42/nvim-web-devicons")
     use("lukas-reineke/indent-blankline.nvim")
+    use("rcarriga/nvim-notify")
 
     use("nvim-treesitter/nvim-treesitter")
     use("nvim-treesitter/nvim-treesitter-context")

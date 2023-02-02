@@ -5,7 +5,9 @@ vim.opt.colorcolumn = "80"
 vim.opt.background = "dark"
 vim.g.embark_terminal_italics = 1
 
-require("catppuccin").setup()
+require("catppuccin").setup({
+    transparent_background = false,
+})
 vim.cmd("colorscheme catppuccin-mocha")
 -- vim.cmd("hi Normal guibg=NONE") -- no background for dracula
 
@@ -43,6 +45,8 @@ require("bufferline").setup({
         diagnostics = "nvim_lsp",
     },
 })
+
+require("notify").setup()
 
 -- make buffers exclusive to their tabs
 require("scope").setup()
