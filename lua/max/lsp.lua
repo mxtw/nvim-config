@@ -17,6 +17,7 @@ lsp.ensure_installed({
     "terraformls",
     "tsserver",
     "yamlls",
+    "ltex",
 })
 
 -- custom cmp sources
@@ -54,6 +55,16 @@ require("crates").setup()
 
 local rust_lsp = lsp.build_options('rust_analyzer', {})
 
+
+-- languagetool
+lsp.configure('ltex', {
+    settings = {
+        ltex = {
+            language = "de-DE",
+        },
+    },
+})
+
 lsp.setup()
 
 -- Initialize rust_analyzer with rust-tools
@@ -75,4 +86,3 @@ vim.diagnostic.config({
     severity_sort = false,
     float = true,
 })
-
