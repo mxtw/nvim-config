@@ -60,15 +60,14 @@ return require("packer").startup(function(use)
 
     -- visual stuff
     use("nvim-lualine/lualine.nvim")
-    use("akinsho/bufferline.nvim")
-    use("stevearc/dressing.nvim")
     use("tiagovla/scope.nvim")
     use("norcalli/nvim-colorizer.lua")
     use("folke/which-key.nvim")
     use("kyazdani42/nvim-web-devicons")
     use("lukas-reineke/indent-blankline.nvim")
-    use("rcarriga/nvim-notify")
     use("akinsho/org-bullets.nvim")
+    use("MunifTanjim/nui.nvim")
+    use("folke/noice.nvim")
 
     use("nvim-treesitter/nvim-treesitter")
     use("nvim-treesitter/nvim-treesitter-context")

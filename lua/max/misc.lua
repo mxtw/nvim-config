@@ -18,5 +18,3 @@ require("Comment").setup({
         extra = false,
     },
 })
-
-require("dressing").setup()
