@@ -54,8 +54,6 @@ return require("packer").startup(function(use)
     use("theHamsta/nvim-dap-virtual-text")
 
     -- colorschemes
-    use("folke/tokyonight.nvim")
-    use("gruvbox-community/gruvbox")
     use({ "catppuccin/nvim", as = "catppuccin" })
 
     -- visual stuff
