@@ -34,7 +34,8 @@ wk.register({
     },
     g = {
         name = "git",
-        g = { "<cmd>Neogit<cr>", "Open Neogit" },
+        g = { "<cmd>Git<cr>", "Open Fugitive" },
+        d = { "<cmd>DiffviewOpen<cr>", "Open Diffview" },
         b = { function() tb.git_branches() end, "List Branches" },
         p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
         k = { "<cmd>Gitsigns prev_hunk<cr>", "Previous Hunk" },

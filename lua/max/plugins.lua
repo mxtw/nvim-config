@@ -13,7 +13,7 @@ return require("packer").startup(function(use)
     use("nvim-lua/popup.nvim")
 
     -- git stuff
-    use("TimUntersberger/neogit")
+    use("tpope/vim-fugitive")
     use("lewis6991/gitsigns.nvim")
     use("sindrets/diffview.nvim")
 
