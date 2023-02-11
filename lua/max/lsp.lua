@@ -62,6 +62,7 @@ lsp.configure('ltex', {
     settings = {
         ltex = {
             language = "de-DE",
+            checkFrequency = "save",
         },
     },
 })
