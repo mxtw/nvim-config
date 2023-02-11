@@ -1,5 +1,6 @@
 local lsp = require("lsp-zero")
 local lsp_format = require("lsp-format")
+lsp_format.setup()
 
 -- set the recommended preset
 lsp.preset("recommended")
