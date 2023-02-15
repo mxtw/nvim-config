@@ -7,7 +7,8 @@ telescope.setup({
                 ["<C-j>"] = "move_selection_next",
                 ["<C-k>"] = "move_selection_previous",
             }
-        }
+        },
+        layout_strategy = "vertical",
     },
     extensions = {
         file_browser = {
