@@ -19,9 +19,7 @@ return require("packer").startup(function(use)
 
     -- telescope
     use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
-    use("nvim-telescope/telescope-project.nvim")
     use("nvim-telescope/telescope-file-browser.nvim")
-    use("jvgrootveld/telescope-zoxide")
 
     -- lsp
     use("VonHeikemen/lsp-zero.nvim")

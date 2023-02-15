@@ -19,7 +19,6 @@ wk.register({
             })
         end, "Neovim Config Files" },
         r = { function() tb.oldfiles() end, "Recent Files" },
-        d = { function() te.zoxide.list() end, "Zoxide" },
     },
     n = {
         name = "notes",
@@ -81,10 +80,6 @@ wk.register({
         h = { function() tb.help_tags() end, "Help Tags" },
         m = { function() tb.man_pages() end, "Man Pages" },
         t = { function() tb.colorscheme() end, "Colorscheme" },
-    },
-    p = {
-        name = "project",
-        p = { function() te.project.project() end, "List Projects" },
     },
     b = {
         name = "buffer",
