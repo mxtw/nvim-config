@@ -65,6 +65,7 @@ return require("packer").startup(function(use)
     use("akinsho/org-bullets.nvim")
     use("MunifTanjim/nui.nvim")
     use("folke/noice.nvim")
+    use("rcarriga/nvim-notify")
 
     use("nvim-treesitter/nvim-treesitter")
     use("nvim-treesitter/nvim-treesitter-context")

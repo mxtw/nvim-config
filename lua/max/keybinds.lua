@@ -13,7 +13,8 @@ wk.register({
     f = {
         name = "file",
         f = { function() te.file_browser.file_browser() end, "File Browser" },
-        p = { function() te.file_browser.file_browser({
+        p = { function()
+            te.file_browser.file_browser({
                 path = "$HOME/.config/nvim",
                 depth = 3,
             })
@@ -22,11 +23,13 @@ wk.register({
     },
     n = {
         name = "notes",
-        f = { function() te.file_browser.file_browser({
+        f = { function()
+            te.file_browser.file_browser({
                 path = "$HOME/org",
             })
         end, "Org Files" },
-        s = { function() tb.live_grep({
+        s = { function()
+            tb.live_grep({
                 cwd = "$HOME/org",
             })
         end, "Search Notes" },
@@ -78,6 +81,7 @@ wk.register({
     h = {
         name = "help",
         h = { function() tb.help_tags() end, "Help Tags" },
+        n = { function() te.notify.notify() end, "Notifications" },
         m = { function() tb.man_pages() end, "Man Pages" },
         t = { function() tb.colorscheme() end, "Colorscheme" },
     },

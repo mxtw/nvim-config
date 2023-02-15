@@ -62,6 +62,11 @@ require("noice").setup({
     },
 })
 
+require("notify").setup({
+    render = "compact",
+    stages = "static",
+})
+
 require("org-bullets").setup()
 
 -- make buffers exclusive to their tabs
