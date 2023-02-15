@@ -28,21 +28,29 @@ vim.api.nvim_create_autocmd(
 )
 
 -- lualine
-require("lualine").setup({
-    tabline = {
-        lualine_a = { "buffers" },
-        lualine_z = { "tabs" },
+require("lualine").setup()
+
+require("bufferline").setup({
+    highlights = {
+        buffer_selected = {
+            italic = false,
+        },
+    },
+    options = {
+        show_close_icon = false,
+        always_show_bufferline = false,
+        diagnostics = "nvim_lsp"
     },
 })
 
 require("noice").setup({
     lsp = {
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-        override = {
-            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-            ["vim.lsp.util.stylize_markdown"] = true,
-            ["cmp.entry.get_documentation"] = true,
-        },
+        -- override = {
+        --     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+        --     ["vim.lsp.util.stylize_markdown"] = true,
+        --     ["cmp.entry.get_documentation"] = true,
+        -- },
     },
     presets = {
         bottom_search = true, -- use a classic bottom cmdline for search

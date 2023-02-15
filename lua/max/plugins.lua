@@ -58,6 +58,7 @@ return require("packer").startup(function(use)
 
     -- visual stuff
     use("nvim-lualine/lualine.nvim")
+    use("akinsho/bufferline.nvim")
     use("tiagovla/scope.nvim")
     use("norcalli/nvim-colorizer.lua")
     use("folke/which-key.nvim")
