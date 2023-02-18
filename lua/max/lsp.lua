@@ -12,13 +12,13 @@ lsp.ensure_installed({
     "dockerls",
     "eslint",
     "gopls",
+    "ltex",
+    "lua_ls",
     "pyright",
     "rust_analyzer",
-    "sumneko_lua",
     "terraformls",
     "tsserver",
     "yamlls",
-    "ltex",
 })
 
 -- custom cmp sources
