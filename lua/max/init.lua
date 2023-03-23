@@ -1,10 +1,11 @@
+require("max.plugins")
+
 require("max.general")
 require("max.git")
 require("max.custom")
 require("max.keybinds")
 require("max.lsp")
 require("max.misc")
-require("max.plugins")
 require("max.telescope")
 require("max.treesitter")
 require("max.visual")

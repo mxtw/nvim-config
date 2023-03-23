@@ -1,86 +1,85 @@
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim",
-        install_path })
-    vim.cmd [[packadd packer.nvim]]
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
+vim.opt.rtp:prepend(lazypath)
 
-return require("packer").startup(function(use)
+require("lazy").setup({
     -- dependency stuff
-    use("wbthomason/packer.nvim")
-    use("nvim-lua/plenary.nvim")
-    use("nvim-lua/popup.nvim")
+    "nvim-lua/plenary.nvim",
+    "nvim-lua/popup.nvim",
 
     -- git stuff
-    use("tpope/vim-fugitive")
-    use("lewis6991/gitsigns.nvim")
-    use("sindrets/diffview.nvim")
+    { "tpope/vim-fugitive",      event = "VeryLazy" },
+    { "lewis6991/gitsigns.nvim", event = "VeryLazy" },
+    { "sindrets/diffview.nvim", event = "VeryLazy"},
 
     -- telescope
-    use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
-    use("nvim-telescope/telescope-file-browser.nvim")
+    { "nvim-telescope/telescope.nvim", branch = "0.1.x" , event = "VeryLazy"},
+    { "nvim-telescope/telescope-file-browser.nvim", event = "VeryLazy"},
 
     -- lsp
-    use("VonHeikemen/lsp-zero.nvim")
-    use("neovim/nvim-lspconfig")
-    use("L3MON4D3/LuaSnip")
-    use("rafamadriz/friendly-snippets")
-    use("lukas-reineke/lsp-format.nvim")
-    use("williamboman/mason.nvim")
-    use("williamboman/mason-lspconfig.nvim")
+    { "VonHeikemen/lsp-zero.nvim", event = "VeryLazy"},
+    { "neovim/nvim-lspconfig", event = "VeryLazy"},
+    { "L3MON4D3/LuaSnip", event = "VeryLazy"},
+    { "rafamadriz/friendly-snippets", event = "VeryLazy"},
+    { "lukas-reineke/lsp-format.nvim", event = "VeryLazy"},
+    { "williamboman/mason.nvim", event = "VeryLazy"},
+    { "williamboman/mason-lspconfig.nvim", event = "VeryLazy"},
 
     -- filetype specifics
     --- rust
-    use("saecki/crates.nvim")
-    use("simrat39/rust-tools.nvim")
+    { "saecki/crates.nvim",            ft = "toml" },
+    { "simrat39/rust-tools.nvim",      ft = "rust" },
     --- python
-    use("psf/black")
+    { "psf/black",                     ft = "python" },
     --- csv
-    use("chrisbra/csv.vim")
+    { "chrisbra/csv.vim",              ft = "csv" },
 
     -- completion
-    use("hrsh7th/cmp-nvim-lsp")
-    use("hrsh7th/cmp-buffer")
-    use("hrsh7th/cmp-path")
-    use("saadparwaiz1/cmp_luasnip")
-    use("hrsh7th/nvim-cmp")
+    { "hrsh7th/cmp-nvim-lsp", event = "VeryLazy"},
+    { "hrsh7th/cmp-buffer", event = "VeryLazy"},
+    { "hrsh7th/cmp-path", event = "VeryLazy"},
+    { "saadparwaiz1/cmp_luasnip", event = "VeryLazy"},
+    { "hrsh7th/nvim-cmp", event = "VeryLazy"},
 
     -- debugging
-    use("mfussenegger/nvim-dap")
-    use("rcarriga/nvim-dap-ui")
-    use("theHamsta/nvim-dap-virtual-text")
+    { "mfussenegger/nvim-dap", event = "VeryLazy"},
+    { "rcarriga/nvim-dap-ui", event = "VeryLazy"},
+    { "theHamsta/nvim-dap-virtual-text", event = "VeryLazy"},
 
     -- colorschemes
-    use({ "catppuccin/nvim", as = "catppuccin" })
+    { "catppuccin/nvim",          name = "catppuccin" },
 
     -- visual stuff
-    use("nvim-lualine/lualine.nvim")
-    use("akinsho/bufferline.nvim")
-    use("tiagovla/scope.nvim")
-    use("norcalli/nvim-colorizer.lua")
-    use("folke/which-key.nvim")
-    use("kyazdani42/nvim-web-devicons")
-    use("lukas-reineke/indent-blankline.nvim")
-    use("akinsho/org-bullets.nvim")
-    use("MunifTanjim/nui.nvim")
-    use("folke/noice.nvim")
-    use("rcarriga/nvim-notify")
+    "nvim-lualine/lualine.nvim",
+    "akinsho/bufferline.nvim",
+    "tiagovla/scope.nvim",
+    { "norcalli/nvim-colorizer.lua", event = "VeryLazy"},
+    "folke/which-key.nvim",
+    "kyazdani42/nvim-web-devicons",
+    { "lukas-reineke/indent-blankline.nvim", event = "VeryLazy"},
+    { "akinsho/org-bullets.nvim", ft = "org" },
+    "MunifTanjim/nui.nvim",
+    "folke/noice.nvim",
+    "rcarriga/nvim-notify",
 
-    use("nvim-treesitter/nvim-treesitter")
-    use("nvim-treesitter/nvim-treesitter-context")
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter-context",
 
     -- other
-    use("windwp/nvim-autopairs")
-    use("nvim-orgmode/orgmode")
-    use("mbbill/undotree")
-    use("akinsho/toggleterm.nvim")
-    use("numToStr/Comment.nvim")
-    use("stevearc/overseer.nvim")
+    { "windwp/nvim-autopairs", event = "VeryLazy"},
+    { "nvim-orgmode/orgmode", event = "VeryLazy"},
+    { "mbbill/undotree", event = "VeryLazy"},
+    { "akinsho/toggleterm.nvim", event = "VeryLazy"},
+    { "numToStr/Comment.nvim", event = "VeryLazy"},
+    { "stevearc/overseer.nvim", event = "VeryLazy"},
 
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if packer_bootstrap then
-        require("packer").sync()
-    end
-end)
+})
