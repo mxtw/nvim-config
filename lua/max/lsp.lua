@@ -21,18 +21,6 @@ lsp.ensure_installed({
     "yamlls",
 })
 
--- custom cmp sources
-lsp.setup_nvim_cmp({
-    sources = {
-        { name = "luasnip" },
-        { name = "nvim_lsp" },
-        { name = "buffer" },
-        { name = "orgmode" },
-        { name = "path" },
-        { name = "crates" },
-    }
-})
-
 local tb = require("telescope.builtin")
 
 -- custom on_attach
@@ -68,6 +56,45 @@ lsp.configure('ltex', {
 })
 
 lsp.setup()
+
+-- setup cmp after lsp.setup
+local cmp = require("cmp")
+local cmp_action = require('lsp-zero').cmp_action()
+
+cmp.setup({
+    snippet = {
+        expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+        end,
+    },
+    mapping = {
+        ['<CR>'] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = false,
+        }),
+        ["<Tab>"] = cmp.mapping.select_next_item(),
+        ["<Down>"] = cmp.mapping.select_next_item(),
+        ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+        ["<Up>"] = cmp.mapping.select_prev_item(),
+        ['<C-Space>'] = function(fallback)
+            if cmp.visible() then
+                cmp.close()
+            else
+                cmp.complete()
+            end
+        end,
+        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+    },
+    sources = {
+        { name = "luasnip" },
+        { name = "nvim_lsp" },
+        { name = "buffer" },
+        { name = "orgmode" },
+        { name = "path" },
+        { name = "crates" },
+    },
+})
 
 -- Initialize rust_analyzer with rust-tools
 require('rust-tools').setup({ server = rust_lsp })
