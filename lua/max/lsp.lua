@@ -115,3 +115,6 @@ vim.diagnostic.config({
     severity_sort = false,
     float = true,
 })
+
+-- trouble.nvim
+require("trouble").setup({})

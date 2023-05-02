@@ -62,6 +62,7 @@ wk.register({
         S = { function() tb.lsp_workspace_symbols() end, "Symbols" },
         c = { "<cmd>OverseerRun<cr>", "Overseer Run" },
         D = { function() toggle_diagnostics() end, "Toggle Diagnostics" },
+        t = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
         o = {
             name = "overseer",
             t = { "<cmd>OverseerToggle<cr>", "Toggle" },
@@ -113,4 +114,4 @@ wk.register({
 
 -- other binds
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>") -- make esc key work in terminal
-vim.keymap.set("n", "<Leader>.", "<C-^>") -- alternate-file to more convenient keybind
+vim.keymap.set("n", "<Leader>.", "<C-^>")   -- alternate-file to more convenient keybind
