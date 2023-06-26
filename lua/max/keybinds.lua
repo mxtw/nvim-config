@@ -60,15 +60,8 @@ wk.register({
         x = { function() tb.diagnostics() end, "Diagnostics" },
         s = { function() tb.lsp_document_symbols() end, "Workspace Symbols" },
         S = { function() tb.lsp_workspace_symbols() end, "Symbols" },
-        c = { "<cmd>OverseerRun<cr>", "Overseer Run" },
         D = { function() toggle_diagnostics() end, "Toggle Diagnostics" },
         t = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
-        o = {
-            name = "overseer",
-            t = { "<cmd>OverseerToggle<cr>", "Toggle" },
-            w = { "<cmd>OverseerQuickAction watch<cr>", "Watch last task" },
-            s = { "<cmd>OverseerQuickAction open hsplit<cr>", "Open task in split" },
-        },
     },
     a = {
         name = "actions",

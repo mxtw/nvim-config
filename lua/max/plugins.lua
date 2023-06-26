@@ -81,6 +81,5 @@ require("lazy").setup({
     { "mbbill/undotree",         event = "VeryLazy" },
     { "akinsho/toggleterm.nvim", event = "VeryLazy" },
     { "numToStr/Comment.nvim",   event = "VeryLazy" },
-    { "stevearc/overseer.nvim",  event = "VeryLazy" },
 
 })
