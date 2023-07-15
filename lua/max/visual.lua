@@ -66,10 +66,6 @@ require("noice").setup({
     },
 })
 
-require("notify").setup({
-    render = "compact",
-    stages = "static",
-})
 
 require("org-bullets").setup()
 

@@ -16,11 +16,10 @@ telescope.setup({
             hide_parent_dir = true,
             theme = "ivy",
             hidden = false,
-            path = "%:p:h", -- use path of file in current buffer
+            path = "%:p:h",     -- use path of file in current buffer
             cwd_to_path = true, -- open file browser using path instead of cwd
         },
     },
 })
 
 telescope.load_extension("file_browser")
-telescope.load_extension("notify")

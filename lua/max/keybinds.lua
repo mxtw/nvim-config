@@ -7,6 +7,7 @@ local wk = require("which-key")
 local dap = require("dap") -- for binding dap stuff
 local tb = require("telescope.builtin")
 local te = require("telescope").extensions
+local noice = require("noice")
 
 -- which-key binds
 wk.register({
@@ -73,7 +74,7 @@ wk.register({
     h = {
         name = "help",
         h = { function() tb.help_tags() end, "Help Tags" },
-        n = { function() te.notify.notify() end, "Notifications" },
+        n = { function() noice.cmd("history") end, "notifications" },
         m = { function() tb.man_pages() end, "Man Pages" },
         t = { function() tb.colorscheme() end, "Colorscheme" },
     },
