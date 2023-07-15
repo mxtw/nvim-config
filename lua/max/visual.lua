@@ -78,3 +78,6 @@ require("scope").setup()
 
 require("indent_blankline").setup()
 require("colorizer").setup()
+
+-- highlight motions
+require("flash").setup()

@@ -70,6 +70,7 @@ require("lazy").setup({
     { "akinsho/org-bullets.nvim",            ft = "org" },
     "MunifTanjim/nui.nvim",
     "folke/noice.nvim",
+    { "folke/flash.nvim",      event = "VeryLazy" },
     "rcarriga/nvim-notify",
 
     "nvim-treesitter/nvim-treesitter",
