@@ -77,3 +77,5 @@ require("colorizer").setup()
 
 -- highlight motions
 require("flash").setup()
+
+require("dressing").setup()
