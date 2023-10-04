@@ -11,22 +11,6 @@ require("catppuccin").setup({
 vim.cmd("colorscheme catppuccin-mocha")
 -- vim.cmd("hi Normal guibg=NONE") -- no background for dracula
 
--- csv.vim autocommands
-vim.api.nvim_create_autocmd(
-    { "BufRead", "BufWritePost" },
-    {
-        pattern = { "*.csv" },
-        command = "%ArrangeColumn",
-    }
-)
-vim.api.nvim_create_autocmd(
-    "BufWritePre",
-    {
-        pattern = { "*.csv" },
-        command = "%UnArrangeColumn",
-    }
-)
-
 -- lualine
 require("lualine").setup({
     sections = {

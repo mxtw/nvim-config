@@ -42,7 +42,7 @@ require("lazy").setup({
     --- python
     { "psf/black",                                  ft = "python" },
     --- csv
-    { "chrisbra/csv.vim",                           ft = "csv" },
+    { "mechatroner/rainbow_csv",                    ft = "csv" },
 
     -- completion
     { "hrsh7th/cmp-nvim-lsp",                       event = "VeryLazy" },
