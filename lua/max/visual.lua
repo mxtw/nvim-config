@@ -69,9 +69,6 @@ require("noice").setup({
 
 require("org-bullets").setup()
 
--- make buffers exclusive to their tabs
-require("scope").setup()
-
 require("ibl").setup({
     scope = { enabled = false },
 })
