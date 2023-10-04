@@ -72,7 +72,9 @@ require("org-bullets").setup()
 -- make buffers exclusive to their tabs
 require("scope").setup()
 
-require("ibl").setup()
+require("ibl").setup({
+    scope = { enabled = false },
+})
 require("colorizer").setup()
 
 -- highlight motions
