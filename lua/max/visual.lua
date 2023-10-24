@@ -64,6 +64,12 @@ require("ibl").setup({
 require("colorizer").setup()
 
 -- highlight motions
-require("flash").setup()
+require("flash").setup({
+    modes = {
+        char = {
+            jump_labels = true,
+        },
+    },
+})
 
 require("dressing").setup()
