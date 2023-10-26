@@ -24,6 +24,7 @@ require("lazy").setup({
     -- telescope
     { "nvim-telescope/telescope.nvim",              branch = "0.1.x",   event = "VeryLazy" },
     { "nvim-telescope/telescope-file-browser.nvim", event = "VeryLazy" },
+    { 'nvim-telescope/telescope-fzf-native.nvim',   build = 'make' },
 
     -- lsp
     { "VonHeikemen/lsp-zero.nvim",                  event = "VeryLazy" },

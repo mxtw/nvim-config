@@ -19,7 +19,9 @@ telescope.setup({
             path = "%:p:h",     -- use path of file in current buffer
             cwd_to_path = true, -- open file browser using path instead of cwd
         },
+        fzf = {},
     },
 })
 
 telescope.load_extension("file_browser")
+telescope.load_extension("fzf")
