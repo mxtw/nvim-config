@@ -101,7 +101,12 @@ wk.register({
     },
     [","] = { function() tb.buffers() end, "List Buffers" },
     ["/"] = { function() tb.live_grep() end, "Grep CWD" },
-    [" "] = { function() tb.find_files() end, "Find Files" },
+    [" "] = { function()
+        tb.find_files({
+            hidden = true,
+            no_ignore = true
+        })
+    end, "Find Files" },
 }, { prefix = "<leader>" })
 
 -- other binds
