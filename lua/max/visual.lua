@@ -13,21 +13,17 @@ vim.cmd("colorscheme catppuccin-mocha")
 
 -- lualine
 require("lualine").setup({
-    sections = {
-        lualine_z = { "location", "selectioncount" }
-    }
-})
-
-require("bufferline").setup({
-    highlights = {
-        buffer_selected = {
-            italic = false,
-        },
-    },
     options = {
-        show_close_icon = false,
-        always_show_bufferline = false,
-        diagnostics = "nvim_lsp"
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
+    },
+    sections = {
+        lualine_a = { "mode" },
+        lualine_b = { "diagnostics" },
+        lualine_c = { "buffers" },
+        lualine_x = {},
+        lualine_y = { "branch", "diff" },
+        lualine_z = { "location", "selectioncount" },
     },
 })
 

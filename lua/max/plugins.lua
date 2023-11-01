@@ -62,7 +62,6 @@ require("lazy").setup({
 
     -- visual stuff
     "nvim-lualine/lualine.nvim",
-    "akinsho/bufferline.nvim",
     { "norcalli/nvim-colorizer.lua",         event = "VeryLazy" },
     "folke/which-key.nvim",
     "kyazdani42/nvim-web-devicons",
