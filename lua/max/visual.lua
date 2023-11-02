@@ -6,10 +6,9 @@ vim.opt.background = "dark"
 vim.g.embark_terminal_italics = 1
 
 require("catppuccin").setup({
-    transparent_background = false,
+    transparent_background = true,
 })
 vim.cmd("colorscheme catppuccin-mocha")
--- vim.cmd("hi Normal guibg=NONE") -- no background for dracula
 
 -- lualine
 require("lualine").setup({
