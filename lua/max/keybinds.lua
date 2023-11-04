@@ -9,6 +9,9 @@ local tb = require("telescope.builtin")
 local te = require("telescope").extensions
 local noice = require("noice")
 
+-- lazygit in toggleterm
+local lazygit = require("toggleterm.terminal").Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
+
 -- which-key binds
 wk.register({
     f = {
@@ -37,14 +40,13 @@ wk.register({
     },
     g = {
         name = "git",
-        g = { "<cmd>Git<cr>", "Open Fugitive" },
+        s = { "<cmd>Git<cr>", "Open Fugitive" },
+        g = { function() lazygit:toggle() end, "Open Lazygit" },
         d = { "<cmd>DiffviewOpen<cr>", "Open Diffview" },
         b = { function() tb.git_branches() end, "List Branches" },
         p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
         k = { "<cmd>Gitsigns prev_hunk<cr>", "Previous Hunk" },
         j = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
-        s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage Hunk" },
-        u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Undo Stage Hunk" },
         r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset Hunk" },
     },
     w = {
@@ -110,5 +112,4 @@ wk.register({
 }, { prefix = "<leader>" })
 
 -- other binds
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>") -- make esc key work in terminal
-vim.keymap.set("n", "<Leader>.", "<C-^>")   -- alternate-file to more convenient keybind
+vim.keymap.set("n", "<Leader>.", "<C-^>") -- alternate-file to more convenient keybind

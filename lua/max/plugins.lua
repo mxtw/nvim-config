@@ -76,10 +76,11 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter-context",
 
     -- other
-    { "windwp/nvim-autopairs", event = "VeryLazy" },
-    { "nvim-orgmode/orgmode",  event = "VeryLazy" },
-    { "mbbill/undotree",       event = "VeryLazy" },
-    { "numToStr/Comment.nvim", event = "VeryLazy" },
-    { "metakirby5/codi.vim",   event = "VeryLazy" },
+    { "windwp/nvim-autopairs",   event = "VeryLazy" },
+    { "nvim-orgmode/orgmode",    event = "VeryLazy" },
+    { "mbbill/undotree",         event = "VeryLazy" },
+    { "numToStr/Comment.nvim",   event = "VeryLazy" },
+    { "metakirby5/codi.vim",     event = "VeryLazy" },
+    { "akinsho/toggleterm.nvim", event = "VeryLazy" },
 
 })
