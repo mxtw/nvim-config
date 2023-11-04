@@ -8,9 +8,7 @@ local dap = require("dap") -- for binding dap stuff
 local tb = require("telescope.builtin")
 local te = require("telescope").extensions
 local noice = require("noice")
-
--- lazygit in toggleterm
-local lazygit = require("toggleterm.terminal").Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
+local Terminal = require("toggleterm.terminal").Terminal
 
 -- which-key binds
 wk.register({
@@ -41,7 +39,14 @@ wk.register({
     g = {
         name = "git",
         s = { "<cmd>Git<cr>", "Open Fugitive" },
-        g = { function() lazygit:toggle() end, "Open Lazygit" },
+        g = { function()
+            Terminal:new({
+                cmd = "lazygit",
+                hidden = true,
+                direction = "float",
+                dir = vim.fn.expand("%:p:h")
+            }):toggle()
+        end, "Open Lazygit" },
         d = { "<cmd>DiffviewOpen<cr>", "Open Diffview" },
         b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Line Blame" },
         p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
