@@ -82,5 +82,6 @@ require("lazy").setup({
     { "numToStr/Comment.nvim",   event = "VeryLazy" },
     { "metakirby5/codi.vim",     event = "VeryLazy" },
     { "akinsho/toggleterm.nvim", event = "VeryLazy" },
+    "ggandor/leap.nvim",
 
 })
