@@ -43,7 +43,7 @@ wk.register({
         s = { "<cmd>Git<cr>", "Open Fugitive" },
         g = { function() lazygit:toggle() end, "Open Lazygit" },
         d = { "<cmd>DiffviewOpen<cr>", "Open Diffview" },
-        b = { function() tb.git_branches() end, "List Branches" },
+        b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Line Blame" },
         p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
         k = { "<cmd>Gitsigns prev_hunk<cr>", "Previous Hunk" },
         j = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
