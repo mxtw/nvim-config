@@ -8,7 +8,6 @@ local dap = require("dap") -- for binding dap stuff
 local tb = require("telescope.builtin")
 local te = require("telescope").extensions
 local noice = require("noice")
-local Terminal = require("toggleterm.terminal").Terminal
 
 -- which-key binds
 wk.register({
@@ -39,14 +38,7 @@ wk.register({
     g = {
         name = "git",
         s = { "<cmd>Git<cr>", "Open Fugitive" },
-        g = { function()
-            Terminal:new({
-                cmd = "lazygit",
-                hidden = true,
-                direction = "float",
-                dir = vim.fn.expand("%:p:h")
-            }):toggle()
-        end, "Open Lazygit" },
+        g = { "<cmd>LazyGitCurrentFile<cr>", "Open Lazygit" },
         d = { "<cmd>DiffviewOpen<cr>", "Open Diffview" },
         b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Line Blame" },
         p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },

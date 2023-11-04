@@ -20,6 +20,7 @@ require("lazy").setup({
     { "tpope/vim-fugitive",                         event = "VeryLazy" },
     { "lewis6991/gitsigns.nvim",                    event = "VeryLazy" },
     { "sindrets/diffview.nvim",                     event = "VeryLazy" },
+    { "kdheepak/lazygit.nvim",                      event = "VeryLazy" },
 
     -- telescope
     { "nvim-telescope/telescope.nvim",              branch = "0.1.x",   event = "VeryLazy" },
@@ -76,12 +77,11 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter-context",
 
     -- other
-    { "windwp/nvim-autopairs",   event = "VeryLazy" },
-    { "nvim-orgmode/orgmode",    event = "VeryLazy" },
-    { "mbbill/undotree",         event = "VeryLazy" },
-    { "numToStr/Comment.nvim",   event = "VeryLazy" },
-    { "metakirby5/codi.vim",     event = "VeryLazy" },
-    { "akinsho/toggleterm.nvim", event = "VeryLazy" },
+    { "windwp/nvim-autopairs", event = "VeryLazy" },
+    { "nvim-orgmode/orgmode",  event = "VeryLazy" },
+    { "mbbill/undotree",       event = "VeryLazy" },
+    { "numToStr/Comment.nvim", event = "VeryLazy" },
+    { "metakirby5/codi.vim",   event = "VeryLazy" },
     "ggandor/leap.nvim",
 
 })
