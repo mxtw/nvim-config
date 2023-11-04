@@ -12,7 +12,6 @@ lsp.ensure_installed({
     "dockerls",
     "eslint",
     "gopls",
-    "ltex",
     "lua_ls",
     "pyright",
     "rust_analyzer",
@@ -43,17 +42,6 @@ lsp.on_attach(
 require("crates").setup()
 
 local rust_lsp = lsp.build_options('rust_analyzer', {})
-
-
--- languagetool
-lsp.configure('ltex', {
-    settings = {
-        ltex = {
-            language = "de-DE",
-            checkFrequency = "save",
-        },
-    },
-})
 
 lsp.setup()
 
