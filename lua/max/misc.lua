@@ -24,5 +24,3 @@ require("Comment").setup({
         extra = false,
     },
 })
-
-require("leap").add_default_mappings()

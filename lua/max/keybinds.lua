@@ -8,6 +8,7 @@ local dap = require("dap") -- for binding dap stuff
 local tb = require("telescope.builtin")
 local te = require("telescope").extensions
 local noice = require("noice")
+local flash = require("flash")
 
 -- which-key binds
 wk.register({
@@ -107,6 +108,11 @@ wk.register({
         })
     end, "Find Files" },
 }, { prefix = "<leader>" })
+
+wk.register({
+    s = { function() flash.jump() end, "Flash Jump" },
+    S = { function() flash.treesitter() end, "Flash Treesitter" },
+})
 
 -- other binds
 vim.keymap.set("n", "<Leader>.", "<C-^>") -- alternate-file to more convenient keybind
