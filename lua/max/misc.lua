@@ -24,3 +24,12 @@ require("Comment").setup({
         extra = false,
     },
 })
+
+require("oil").setup({
+    columns = {
+        "icon",
+        "permissions",
+        "size",
+    },
+    skip_confirm_for_simple_edits = true,
+})

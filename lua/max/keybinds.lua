@@ -107,6 +107,7 @@ wk.register({
             no_ignore = true
         })
     end, "Find Files" },
+    ["-"] = { "<cmd>Oil<cr>", "Open Oil" },
 }, { prefix = "<leader>" })
 
 wk.register({
