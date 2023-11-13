@@ -58,7 +58,7 @@ require("colorizer").setup()
 -- highlight motions
 require("flash").setup({
     jump = {
-        autojump = true
+        autojump = false
     }
 })
 
