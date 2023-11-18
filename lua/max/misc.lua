@@ -34,4 +34,12 @@ require("oil").setup({
     skip_confirm_for_simple_edits = true,
 })
 
-require("gen").model = "mistral:instruct"
+local gen = require("gen")
+
+gen.model = "mistral:instruct"
+gen.prompts["Generate_Code"] = {
+    prompt =
+    "Generate code based on the following description: '$input'. Only ouput the result in format ```$filetype\n...\n```:\n```$filetype\n$text\n```",
+    extract = "```$filetype\n(.-)```",
+    replace = true,
+}
