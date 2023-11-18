@@ -66,7 +66,7 @@ wk.register({
     },
     a = {
         name = "actions",
-        [";"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment linewise", mode = "v" },
+        a = { "<cmd>Gen<cr>", "Gen Prompt" },
     },
     o = {
         name = "open",
@@ -103,12 +103,20 @@ wk.register({
     ["/"] = { function() tb.live_grep() end, "Grep CWD" },
     [" "] = { function() tb.find_files() end, "Find Files" },
     ["-"] = { "<cmd>Oil<cr>", "Open Oil" },
+    ["."] = { "<C-^>", "Alternate File" }
 }, { prefix = "<leader>" })
 
+-- visual mode leader binds
+wk.register({
+    a = {
+        name = "actions",
+        [";"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment linewise" },
+        a = { ":Gen<cr>", "Gen Prompt" }, -- use : instead of <cmd> so it inserts the selection marks
+    }
+}, { prefix = "<leader>", mode = "v" })
+
+-- non leader binds
 wk.register({
     s = { function() flash.jump() end, "Flash Jump" },
     S = { function() flash.treesitter() end, "Flash Treesitter" },
 })
-
--- other binds
-vim.keymap.set("n", "<Leader>.", "<C-^>") -- alternate-file to more convenient keybind

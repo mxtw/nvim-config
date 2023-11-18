@@ -83,5 +83,6 @@ require("lazy").setup({
     { "numToStr/Comment.nvim", event = "VeryLazy" },
     { "metakirby5/codi.vim",   event = "VeryLazy" },
     { "stevearc/oil.nvim",     event = "VeryLazy" },
+    { "David-Kunz/gen.nvim",   event = "VeryLazy" },
 
 })
