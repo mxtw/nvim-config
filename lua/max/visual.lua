@@ -63,3 +63,23 @@ require("flash").setup({
 })
 
 require("dressing").setup()
+
+
+require("twilight").setup()
+require("zen-mode").setup({
+    window = {
+        width = 90,
+        options = {
+            number = true,
+            relativenumber = true,
+        }
+    },
+    plugins = {
+        gitsigns = {
+            enabled = true
+        },
+        wezterm = {
+            enabled = true
+        }
+    },
+})

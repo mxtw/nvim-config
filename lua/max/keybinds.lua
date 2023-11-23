@@ -99,6 +99,11 @@ wk.register({
         B = { function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, "Set Breakpoint (conditional)" }, -- stolen from theprimeagen
         t = { function() dap.terminate() end, "Terminate Session" },
     },
+    z = {
+        name = "zen",
+        z = { "<cmd>ZenMode<cr>", "Toggle Zen Mode" },
+        t = { "<cmd>Twilight<cr>", "Toggle Twilight" },
+    },
     [","] = { function() tb.buffers() end, "List Buffers" },
     ["/"] = { function() tb.live_grep() end, "Grep CWD" },
     [" "] = { function() tb.find_files() end, "Find Files" },

@@ -71,6 +71,8 @@ require("lazy").setup({
     "MunifTanjim/nui.nvim",
     "folke/noice.nvim",
     { "folke/flash.nvim",       event = "VeryLazy" },
+    { "folke/zen-mode.nvim",    event = "VeryLazy" },
+    { "folke/twilight.nvim",    event = "VeryLazy" },
     { "stevearc/dressing.nvim", event = "VeryLazy" },
 
     "nvim-treesitter/nvim-treesitter",
