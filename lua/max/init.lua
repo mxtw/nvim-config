@@ -1,4 +1,4 @@
-require("max.plugins")
+require("max.lazy")
 
 require("max.general")
 require("max.git")
