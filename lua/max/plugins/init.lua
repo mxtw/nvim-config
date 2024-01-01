@@ -3,44 +3,39 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-lua/popup.nvim",
 
-    -- telescope
-    { "nvim-telescope/telescope.nvim",              branch = "0.1.x",   event = "VeryLazy" },
-    { "nvim-telescope/telescope-file-browser.nvim", event = "VeryLazy" },
-    { 'nvim-telescope/telescope-fzf-native.nvim',   build = 'make' },
-
     -- lsp
-    { "VonHeikemen/lsp-zero.nvim",                  event = "VeryLazy" },
-    { "neovim/nvim-lspconfig",                      event = "VeryLazy" },
-    { "L3MON4D3/LuaSnip",                           event = "VeryLazy" },
-    { "rafamadriz/friendly-snippets",               event = "VeryLazy" },
-    { "lukas-reineke/lsp-format.nvim",              event = "VeryLazy" },
-    { "williamboman/mason.nvim",                    event = "VeryLazy" },
-    { "williamboman/mason-lspconfig.nvim",          event = "VeryLazy" },
-    { "folke/trouble.nvim",                         event = "VeryLazy" },
+    { "VonHeikemen/lsp-zero.nvim",         event = "VeryLazy" },
+    { "neovim/nvim-lspconfig",             event = "VeryLazy" },
+    { "L3MON4D3/LuaSnip",                  event = "VeryLazy" },
+    { "rafamadriz/friendly-snippets",      event = "VeryLazy" },
+    { "lukas-reineke/lsp-format.nvim",     event = "VeryLazy" },
+    { "williamboman/mason.nvim",           event = "VeryLazy" },
+    { "williamboman/mason-lspconfig.nvim", event = "VeryLazy" },
+    { "folke/trouble.nvim",                event = "VeryLazy" },
 
     -- filetype specifics
     --- rust
-    { "saecki/crates.nvim",                         ft = "toml" },
-    { "simrat39/rust-tools.nvim",                   ft = "rust" },
+    { "saecki/crates.nvim",                ft = "toml" },
+    { "simrat39/rust-tools.nvim",          ft = "rust" },
     --- python
-    { "psf/black",                                  ft = "python" },
+    { "psf/black",                         ft = "python" },
     --- csv
-    { "mechatroner/rainbow_csv",                    ft = "csv" },
+    { "mechatroner/rainbow_csv",           ft = "csv" },
 
     -- completion
-    { "hrsh7th/cmp-nvim-lsp",                       event = "VeryLazy" },
-    { "hrsh7th/cmp-buffer",                         event = "VeryLazy" },
-    { "hrsh7th/cmp-path",                           event = "VeryLazy" },
-    { "saadparwaiz1/cmp_luasnip",                   event = "VeryLazy" },
-    { "hrsh7th/nvim-cmp",                           event = "VeryLazy" },
+    { "hrsh7th/cmp-nvim-lsp",              event = "VeryLazy" },
+    { "hrsh7th/cmp-buffer",                event = "VeryLazy" },
+    { "hrsh7th/cmp-path",                  event = "VeryLazy" },
+    { "saadparwaiz1/cmp_luasnip",          event = "VeryLazy" },
+    { "hrsh7th/nvim-cmp",                  event = "VeryLazy" },
 
     -- debugging
-    { "mfussenegger/nvim-dap",                      event = "VeryLazy" },
-    { "rcarriga/nvim-dap-ui",                       event = "VeryLazy" },
-    { "theHamsta/nvim-dap-virtual-text",            event = "VeryLazy" },
+    { "mfussenegger/nvim-dap",             event = "VeryLazy" },
+    { "rcarriga/nvim-dap-ui",              event = "VeryLazy" },
+    { "theHamsta/nvim-dap-virtual-text",   event = "VeryLazy" },
 
     -- colorschemes
-    { "catppuccin/nvim",                            name = "catppuccin" },
+    { "catppuccin/nvim",                   name = "catppuccin" },
 
     -- visual stuff
     "nvim-lualine/lualine.nvim",
