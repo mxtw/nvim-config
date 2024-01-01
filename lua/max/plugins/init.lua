@@ -3,12 +3,6 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-lua/popup.nvim",
 
-    -- git stuff
-    { "tpope/vim-fugitive",                         event = "VeryLazy" },
-    { "lewis6991/gitsigns.nvim",                    event = "VeryLazy" },
-    { "sindrets/diffview.nvim",                     event = "VeryLazy" },
-    { "kdheepak/lazygit.nvim",                      event = "VeryLazy" },
-
     -- telescope
     { "nvim-telescope/telescope.nvim",              branch = "0.1.x",   event = "VeryLazy" },
     { "nvim-telescope/telescope-file-browser.nvim", event = "VeryLazy" },

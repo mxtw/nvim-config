@@ -1,7 +1,6 @@
 require("max.lazy")
 
 require("max.general")
-require("max.git")
 require("max.custom")
 require("max.keybinds")
 require("max.lsp")
