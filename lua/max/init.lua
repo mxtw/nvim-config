@@ -1,10 +1,6 @@
-require("max.lazy")
-
 require("max.general")
+
+require("max.lazy")
 require("max.custom")
 require("max.keybinds")
-require("max.lsp")
-require("max.misc")
-require("max.treesitter")
 require("max.visual")
-require("max.debugger")

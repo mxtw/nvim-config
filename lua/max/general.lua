@@ -45,3 +45,5 @@ vim.opt.splitbelow = true
 -- conceal links
 vim.opt.conceallevel = 2
 vim.opt.concealcursor = "nc"
+
+vim.g.mapleader = " " -- set leader key to space
