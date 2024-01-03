@@ -61,16 +61,16 @@ return {
                 require("telescope.builtin").oldfiles()
             end },
 
-            { "<leader>nf", function()
-                require("telescope").extensions.file_browser.file_browser({
-                    path = "$HOME/org",
-                })
-            end },
-            { "<leader>ns", function()
-                require("telescope.builtin").live_grep({
-                    cwd = "$HOME/org",
-                })
-            end },
+            -- { "<leader>nf", function()
+            --     require("telescope").extensions.file_browser.file_browser({
+            --         path = "$HOME/org",
+            --     })
+            -- end },
+            -- { "<leader>ns", function()
+            --     require("telescope.builtin").live_grep({
+            --         cwd = "$HOME/org",
+            --     })
+            -- end },
 
             { "<leader>cx", function()
                 require("telescope.builtin").diagnostics()
