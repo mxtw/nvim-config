@@ -105,6 +105,18 @@ return {
         end
     },
 
-
-
+    {
+        "luckasRanarison/nvim-devdocs",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        opts = {},
+        cmd = { "DevdocsOpen", "DevdocsInstall", "DevdocsUpdate", "DevdocsUpdateAll" },
+        keys = {
+            { "<leader>hd", "<cmd>DevdocsOpen<cr>" },
+            { "<leader>hD", "<cmd>DevdocsInstall<cr>" }
+        }
+    }
 }
