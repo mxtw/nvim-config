@@ -1,14 +1,4 @@
 return {
-    -- lsp
-    {
-        "VonHeikemen/lsp-zero.nvim",
-        lazy = true,
-        config = false,
-        init = function()
-            vim.g.lsp_zero_extend_cmp = 0
-            vim.g.lsp_zero_extend_lspconfig = 0
-        end,
-    },
     {
         "williamboman/mason.nvim",
         lazy = false,
@@ -27,7 +17,6 @@ return {
         },
         config = function()
             local cmp = require("cmp")
-            local cmp_action = require('lsp-zero').cmp_action()
 
             cmp.setup({
                 snippet = {
@@ -51,8 +40,8 @@ return {
                             cmp.complete()
                         end
                     end,
-                    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-                    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+                    -- ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+                    -- ['<C-b>'] = cmp_action.luasnip_jump_backward(),
                 },
                 sources = {
                     { name = "luasnip" },
@@ -74,55 +63,67 @@ return {
             { "hrsh7th/cmp-nvim-lsp" },
             { "williamboman/mason-lspconfig.nvim" },
             { "lukas-reineke/lsp-format.nvim" },
-            { "simrat39/rust-tools.nvim",         ft = "rust" },
         },
         config = function()
-            local lsp = require("lsp-zero")
             local lsp_format = require("lsp-format")
             lsp_format.setup()
 
-            -- set the recommended preset
-            lsp.preset("recommended")
-
-            -- ensure some common servers
-            lsp.ensure_installed({
-                "bashls",
-                "clangd",
-                "dockerls",
-                "eslint",
-                "gopls",
-                "lua_ls",
-                "pyright",
-                "rust_analyzer",
-                "terraformls",
-                "tsserver",
-                "yamlls",
-            })
-
             local tb = require("telescope.builtin")
 
-            -- custom on_attach
-            lsp.on_attach(
-                function(client, bufnr)
-                    -- lsp-format for autoformatting
-                    lsp_format.on_attach(client)
-                    local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-                    -- some custom keybinds
-                    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-                    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-                    vim.keymap.set('n', '<space>cd', vim.diagnostic.open_float, bufopts)
-                    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-                    vim.keymap.set('n', 'gr', function() tb.lsp_references() end, bufopts)
+            vim.keymap.set('n', '<space>cd', vim.diagnostic.open_float)
+
+            vim.api.nvim_create_autocmd("LspAttach", {
+                desc = "LSP Actions",
+                callback = function(event)
+                    local opts = { noremap = true, silent = true, buffer = event.buf }
+
+                    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+                    vim.keymap.set('n', '<space>cr', vim.lsp.buf.rename, opts)
+                    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
+                    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+                    vim.keymap.set('n', 'gr', function() tb.lsp_references() end, opts)
+
+                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+                    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+                    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+                    vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
+                    vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, opts)
                 end
-            )
+            })
 
-            local rust_lsp = lsp.build_options('rust_analyzer', {})
+            local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            lsp.setup()
+            local on_attach = function(client, bufnr)
+                lsp_format.on_attach(client, bufnr)
+            end
 
-            -- Initialize rust_analyzer with rust-tools
-            require('rust-tools').setup({ server = rust_lsp })
+            local default_setup = function(server)
+                require("lspconfig")[server].setup({
+                    capabilities = lsp_capabilities,
+                    on_attach = on_attach,
+                })
+            end
+
+            require("mason").setup()
+            require("mason-lspconfig").setup({
+                ensure_installed = {
+                    "bashls",
+                    "clangd",
+                    "dockerls",
+                    "eslint",
+                    "gopls",
+                    "lua_ls",
+                    "pyright",
+                    "rust_analyzer",
+                    "terraformls",
+                    "tsserver",
+                    "yamlls",
+                },
+                handlers = {
+                    default_setup,
+                },
+            })
 
             -- diagnostics
             vim.diagnostic.config({
