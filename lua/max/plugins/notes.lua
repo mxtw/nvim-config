@@ -75,6 +75,7 @@ return {
             { "<leader>no", "<cmd>ObsidianOpen<cr>" },
             { "<leader>na", "<cmd>e ~/notes/index.md<cr>" },
             { "<leader>nb", "<cmd>ObsidianBacklinks<cr>" },
+            { "<leader>nn", ":ObsidianLinkNew<cr>",        mode = "v" },
 
             { "<leader>nt", "<cmd>ObsidianToday<cr>" },
             { "<leader>nm", "<cmd>ObsidianTomorrow<cr>" },
