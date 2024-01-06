@@ -17,6 +17,8 @@ return {
         },
         config = function()
             local cmp = require("cmp")
+            local luasnip = require("luasnip")
+            require("luasnip.loaders.from_vscode").lazy_load()
 
             cmp.setup({
                 snippet = {
@@ -29,10 +31,33 @@ return {
                         behavior = cmp.ConfirmBehavior.Replace,
                         select = false,
                     }),
-                    ["<Tab>"] = cmp.mapping.select_next_item(),
-                    ["<Down>"] = cmp.mapping.select_next_item(),
-                    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
                     ["<Up>"] = cmp.mapping.select_prev_item(),
+                    ["<Down>"] = cmp.mapping.select_next_item(),
+
+                    ["<Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item()
+                            -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+                            -- that way you will only jump inside the snippet region
+                        elseif luasnip.expand_or_jumpable() then
+                            luasnip.expand_or_jump()
+                        elseif has_words_before() then
+                            cmp.complete()
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+
+                    ["<S-Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_prev_item()
+                        elseif luasnip.jumpable(-1) then
+                            luasnip.jump(-1)
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+
                     ['<C-Space>'] = function(fallback)
                         if cmp.visible() then
                             cmp.close()
@@ -40,8 +65,6 @@ return {
                             cmp.complete()
                         end
                     end,
-                    -- ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-                    -- ['<C-b>'] = cmp_action.luasnip_jump_backward(),
                 },
                 sources = {
                     { name = "luasnip" },
@@ -77,6 +100,12 @@ return {
                 desc = "LSP Actions",
                 callback = function(event)
                     local opts = { noremap = true, silent = true, buffer = event.buf }
+
+                    -- TODO get this to work on nightly
+                    -- local client = vim.lsp.get_client_by_id(event.data.client_id)
+                    -- if client.server_capabilities.inlayHintProvider then
+                    --     vim.lsp.inlay_hint.enable(event.buf, true)
+                    -- end
 
                     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
                     vim.keymap.set('n', '<space>cr', vim.lsp.buf.rename, opts)
