@@ -11,7 +11,7 @@ return {
         },
         cmd = "Oil",
         keys = {
-            { "<leader>-", "<cmd>Oil<cr>" }
+            { "<leader>-", "<cmd>Oil<cr>", desc = "Oil" }
         }
     },
 
@@ -31,8 +31,8 @@ return {
             end
         },
         keys = {
-            { "<leader>aa", "<cmd>Gen<cr>" },
-            { "<leader>aa", ":Gen<cr>",    mode = "v" }, -- use : instead of <cmd> so it inserts the selection marks
+            { "<leader>aa", "<cmd>Gen<cr>", desc = "Use ollama" },
+            { "<leader>aa", ":Gen<cr>",     desc = "Use ollama", mode = "v" }, -- use : instead of <cmd> so it inserts the selection marks
         }
     },
 
@@ -45,12 +45,20 @@ return {
         },
         event = "VeryLazy",
         keys = {
-            { "s", function()
-                require("flash").jump()
-            end },
-            { "S", function()
-                require("flash").treesitter()
-            end },
+            {
+                "s",
+                function()
+                    require("flash").jump()
+                end,
+                desc = "Jump"
+            },
+            {
+                "S",
+                function()
+                    require("flash").treesitter()
+                end,
+                desc = "Select with Treesitter"
+            },
         }
     },
 
@@ -63,7 +71,7 @@ return {
             },
         },
         keys = {
-            { "<leader>a;", "<Plug>(comment_toggle_linewise_visual)", mode = "v" }
+            { "<leader>a;", "<Plug>(comment_toggle_linewise_visual)", mode = "v", desc = "Toggle Comment" }
         }
     },
 
@@ -73,7 +81,7 @@ return {
         "mbbill/undotree",
         cmd = "UndotreeToggle",
         keys = {
-            { "<leader>bu", "<cmd>UndotreeToggle<cr>" }
+            { "<leader>bu", "<cmd>UndotreeToggle<cr>", desc = "Toggle Undotree" }
         }
     },
     { "metakirby5/codi.vim",   cmd = "Codi" },
@@ -115,8 +123,8 @@ return {
         opts = {},
         cmd = { "DevdocsOpen", "DevdocsInstall", "DevdocsUpdate", "DevdocsUpdateAll" },
         keys = {
-            { "<leader>hd", "<cmd>DevdocsOpen<cr>" },
-            { "<leader>hD", "<cmd>DevdocsInstall<cr>" }
+            { "<leader>hd", "<cmd>DevdocsOpen<cr>",    desc = "Open Devdocs" },
+            { "<leader>hD", "<cmd>DevdocsInstall<cr>", desc = "Install Devdocs" }
         }
     }
 }

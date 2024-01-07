@@ -170,7 +170,7 @@ return {
         "folke/trouble.nvim",
         config = true,
         keys = {
-            { "<leader>ct", "<cmd>TroubleToggle<cr>" }
+            { "<leader>ct", "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" }
         },
         cmd = "TroubleToggle"
     },

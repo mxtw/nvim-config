@@ -60,7 +60,7 @@ return {
         },
         lazy = false,
         keys = {
-            { "<leader>hn", "<cmd>NoiceHistory<cr>" }
+            { "<leader>hn", "<cmd>NoiceHistory<cr>", desc = "Noice History" }
         }
     },
 
@@ -83,7 +83,7 @@ return {
         config = true,
         cmd = "Twilight",
         keys = {
-            { "<leader>zt", "<cmd>Twilight<cr>" },
+            { "<leader>zt", "<cmd>Twilight<cr>", desc = "Toggle Twilight" },
         },
     },
 
@@ -105,7 +105,7 @@ return {
         },
         cmd = "ZenMode",
         keys = {
-            { "<leader>zz", "<cmd>ZenMode<cr>" },
+            { "<leader>zz", "<cmd>ZenMode<cr>", desc = "Toggle Zen Mode" },
         },
     },
 

@@ -38,73 +38,100 @@ return {
             end
         },
         keys = {
-            { "<leader><space>", function()
-                builtin = require("telescope.builtin")
-                local opts = {} -- define here if you want to define something
-                is_inside_work_tree = {}
+            {
+                "<leader><space>",
+                function()
+                    builtin = require("telescope.builtin")
+                    local opts = {} -- define here if you want to define something
+                    is_inside_work_tree = {}
 
-                local cwd = vim.fn.getcwd()
-                if is_inside_work_tree[cwd] == nil then
-                    vim.fn.system("git rev-parse --is-inside-work-tree")
-                    is_inside_work_tree[cwd] = vim.v.shell_error == 0
-                end
+                    local cwd = vim.fn.getcwd()
+                    if is_inside_work_tree[cwd] == nil then
+                        vim.fn.system("git rev-parse --is-inside-work-tree")
+                        is_inside_work_tree[cwd] = vim.v.shell_error == 0
+                    end
 
-                if is_inside_work_tree[cwd] then
-                    builtin.git_files(opts)
-                else
-                    builtin.find_files(opts)
-                end
-            end },
-            { "<leader>,", function()
-                require("telescope.builtin").buffers()
-            end },
-            { "<leader>/", function()
-                require("telescope.builtin").live_grep()
-            end },
+                    if is_inside_work_tree[cwd] then
+                        builtin.git_files(opts)
+                    else
+                        builtin.find_files(opts)
+                    end
+                end,
+                desc = "Fuzzy Find Files"
+            },
+            {
+                "<leader>,",
+                function()
+                    require("telescope.builtin").buffers()
+                end,
+                desc = "Buffers"
+            },
+            {
+                "<leader>/",
+                function()
+                    require("telescope.builtin").live_grep()
+                end,
+                desc = "Live Grep"
+            },
 
-            { "<leader>ff", function()
-                require("telescope").extensions.file_browser.file_browser()
-            end },
-            { "<leader>fp", function()
-                require("telescope").extensions.file_browser.file_browser({
-                    path = "$HOME/.config/nvim",
-                    depth = 3,
-                })
-            end },
-            { "<leader>fr", function()
-                require("telescope.builtin").oldfiles()
-            end },
+            {
+                "<leader>ff",
+                function()
+                    require("telescope").extensions.file_browser.file_browser()
+                end,
+                desc = "File Browser"
+            },
+            {
+                "<leader>fr",
+                function()
+                    require("telescope.builtin").oldfiles()
+                end,
+                desc = "Previous Files"
+            },
 
-            -- { "<leader>nf", function()
-            --     require("telescope").extensions.file_browser.file_browser({
-            --         path = "$HOME/org",
-            --     })
-            -- end },
-            -- { "<leader>ns", function()
-            --     require("telescope.builtin").live_grep({
-            --         cwd = "$HOME/org",
-            --     })
-            -- end },
+            {
+                "<leader>cx",
+                function()
+                    require("telescope.builtin").diagnostics()
+                end,
+                desc = "Search Diagnostics"
+            },
+            {
+                "<leader>cs",
+                function()
+                    require("telescope.builtin").lsp_document_symbols()
+                end,
+                desc = "Search Document Symbols",
+            },
+            {
+                "<leader>cS",
+                function()
+                    require("telescope.builtin").lsp_workspace_symbols()
+                end,
+                desc = "Search Workspace Symbols",
+            },
 
-            { "<leader>cx", function()
-                require("telescope.builtin").diagnostics()
-            end },
-            { "<leader>cs", function()
-                require("telescope.builtin").lsp_document_symbols()
-            end },
-            { "<leader>cS", function()
-                require("telescope.builtin").lsp_workspace_symbols()
-            end },
-
-            { "<leader>hh", function()
-                require("telescope.builtin").help_tags()
-            end },
-            { "<leader>hm", function()
-                require("telescope.builtin").man_pages()
-            end },
-            { "<leader>ht", function()
-                require("telescope.builtin").colorscheme()
-            end },
+            {
+                "<leader>hh",
+                function()
+                    require("telescope.builtin").help_tags()
+                end,
+                desc = "Help Tags",
+            },
+            {
+                "<leader>hm",
+                function()
+                    require("telescope.builtin").man_pages()
+                end,
+                desc = "Man Pages",
+            },
+            {
+                "<leader>ht",
+                function()
+                    require("telescope.builtin").colorscheme()
+                end,
+                desc = "Colorschemes",
+            },
         },
     }
 }

@@ -68,18 +68,18 @@ return {
             end,
         },
         keys = {
-            { "<leader>nf", "<cmd>ObsidianQuickSwitch<cr>" },
-            { "<leader>ns", "<cmd>ObsidianSearch<cr>" },
-            { "<leader>nn", ":ObsidianNew " },
-            { "<leader>nc", "<cmd>ObsidianTemplate<cr>" },
-            { "<leader>no", "<cmd>ObsidianOpen<cr>" },
-            { "<leader>na", "<cmd>e ~/notes/index.md<cr>" },
-            { "<leader>nb", "<cmd>ObsidianBacklinks<cr>" },
-            { "<leader>nn", ":ObsidianLinkNew<cr>",        mode = "v" },
+            { "<leader>nf", "<cmd>ObsidianQuickSwitch<cr>", desc = "Find Notes" },
+            { "<leader>ns", "<cmd>ObsidianSearch<cr>",      desc = "Search Note Contents" },
+            { "<leader>nn", ":ObsidianNew ",                desc = "Create New Note" },
+            { "<leader>nc", "<cmd>ObsidianTemplate<cr>",    desc = "Insert Template" },
+            { "<leader>no", "<cmd>ObsidianOpen<cr>",        desc = "Open in Obsidian" },
+            { "<leader>na", "<cmd>e ~/notes/index.md<cr>",  desc = "Open Index" },
+            { "<leader>nb", "<cmd>ObsidianBacklinks<cr>",   desc = "Show Backlinks" },
+            { "<leader>nn", ":ObsidianLinkNew<cr>",         mode = "v",                   desc = "New Note from Selection" },
 
-            { "<leader>nt", "<cmd>ObsidianToday<cr>" },
-            { "<leader>nm", "<cmd>ObsidianTomorrow<cr>" },
-            { "<leader>ny", "<cmd>ObsidianYesterday<cr>" },
+            { "<leader>nt", "<cmd>ObsidianToday<cr>",       desc = "Open Todays Note" },
+            { "<leader>nm", "<cmd>ObsidianTomorrow<cr>",    desc = "Open Tomorrows Note" },
+            { "<leader>ny", "<cmd>ObsidianYesterday<cr>",   desc = "Open Yesterdays Note" },
         }
     }
 }
