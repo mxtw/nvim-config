@@ -1,6 +1,7 @@
 return {
     {
         "tpope/vim-fugitive",
+        cmd = { "Git" },
         keys = {
             { "<leader>gs", "<cmd>Git<cr>", desc = "Fugitive Status" }
         }
@@ -23,7 +24,7 @@ return {
             use_icons = true,
         },
         keys = {
-            { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
+            { "<leader>dg", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
         }
     },
     {
