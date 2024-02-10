@@ -161,6 +161,11 @@ return {
                 },
             })
 
+            vim.api.nvim_create_autocmd(
+                { "BufWritePost" },
+                { pattern = { "*.py" }, command = "!black %" }
+            )
+
             -- diagnostics
             vim.diagnostic.config({
                 virtual_text = true,
@@ -185,17 +190,6 @@ return {
     -- filetype specifics
     --- rust
     { "saecki/crates.nvim",      ft = "toml", config = true },
-    --- python
-    {
-        "psf/black",
-        ft = "python",
-        config = function()
-            vim.api.nvim_create_autocmd(
-                { "BufWritePre" },
-                { pattern = { "*.py" }, command = "Black" }
-            )
-        end
-    },
     --- csv
     { "mechatroner/rainbow_csv", ft = "csv" },
 }
