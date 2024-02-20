@@ -14,6 +14,7 @@ return {
             { "hrsh7th/cmp-buffer" },
             { "hrsh7th/cmp-path" },
             { "saadparwaiz1/cmp_luasnip" },
+            { "ray-x/lsp_signature.nvim" },
         },
         config = function()
             local cmp = require("cmp")
@@ -129,6 +130,9 @@ return {
             })
 
             local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local lsp_signature = require("lsp_signature").setup({
+                hint_prefix = "> "
+            })
 
             local on_attach = function(client, bufnr)
                 lsp_format.on_attach(client, bufnr)
