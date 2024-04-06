@@ -75,7 +75,7 @@ return {
         }
     },
 
-    { "norcalli/nvim-colorizer.lua",  event = "VeryLazy", config = true },
+    { "norcalli/nvim-colorizer.lua",  config = true },
     { "stevearc/dressing.nvim",       event = "VeryLazy", config = true },
 
     {
