@@ -126,5 +126,36 @@ return {
             { "<leader>hd", "<cmd>DevdocsOpen<cr>",    desc = "Open Devdocs" },
             { "<leader>hD", "<cmd>DevdocsInstall<cr>", desc = "Install Devdocs" }
         }
+    },
+
+    {
+        'samharju/yeet.nvim',
+        dependencies = {
+            "stevearc/dressing.nvim"
+        },
+        cmd = 'Yeet',
+        opts = {},
+        keys = {
+            {
+                "<leader>yt",
+                function() require("yeet").select_target() end,
+                desc = "Set Yeet Target"
+            },
+            {
+                "<leader>yc",
+                function() require("yeet").set_cmd() end,
+                desc = "Set Yeet Command"
+            },
+            {
+                "<leader>yy",
+                function() require("yeet").execute() end,
+                desc = "Yeet"
+            },
+            {
+                "<leader>yp",
+                function() require("yeet").toggle_post_write() end,
+                desc = "Toggle Post Write"
+            },
+        }
     }
 }
