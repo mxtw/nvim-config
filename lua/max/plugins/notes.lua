@@ -46,7 +46,7 @@ return {
         keys = {
             { "<leader>nf", "<cmd>ObsidianQuickSwitch<cr>", desc = "Find Notes" },
             { "<leader>ns", "<cmd>ObsidianSearch<cr>",      desc = "Search Note Contents" },
-            { "<leader>nn", ":ObsidianNew ",                desc = "Create New Note" },
+            { "<leader>nn", "<cmd>ObsidianNew<cr>",         desc = "Create New Note" },
             { "<leader>nc", "<cmd>ObsidianTemplate<cr>",    desc = "Insert Template" },
             { "<leader>no", "<cmd>ObsidianOpen<cr>",        desc = "Open in Obsidian" },
             { "<leader>na", "<cmd>e ~/notes/index.md<cr>",  desc = "Open Index" },
