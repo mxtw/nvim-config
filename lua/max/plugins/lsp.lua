@@ -35,7 +35,7 @@ return {
                     ["<Up>"] = cmp.mapping.select_prev_item(),
                     ["<Down>"] = cmp.mapping.select_next_item(),
 
-                    ["<Tab>"] = cmp.mapping(function(fallback)
+                    ["<C-n>"] = cmp.mapping(function(fallback)
                         local has_words_before = function()
                             unpack = unpack or table.unpack
                             local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -56,7 +56,7 @@ return {
                         end
                     end, { "i", "s" }),
 
-                    ["<S-Tab>"] = cmp.mapping(function(fallback)
+                    ["<C-p>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_prev_item()
                         elseif luasnip.jumpable(-1) then
