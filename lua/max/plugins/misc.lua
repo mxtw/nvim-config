@@ -16,27 +16,6 @@ return {
     },
 
     {
-        "David-Kunz/gen.nvim",
-        config = {
-            function()
-                local gen = require("gen")
-
-                gen.model = "mistral:instruct"
-                gen.prompts["Generate_Code"] = {
-                    prompt =
-                    "Generate code based on the following description: '$input'. Only ouput the result in format ```$filetype\n...\n```:\n```$filetype\n$text\n```",
-                    extract = "```$filetype\n(.-)```",
-                    replace = true,
-                }
-            end
-        },
-        keys = {
-            { "<leader>aa", "<cmd>Gen<cr>", desc = "Use ollama" },
-            { "<leader>aa", ":Gen<cr>",     desc = "Use ollama", mode = "v" }, -- use : instead of <cmd> so it inserts the selection marks
-        }
-    },
-
-    {
         "folke/flash.nvim",
         opts = {
             jump = {
@@ -62,19 +41,6 @@ return {
         }
     },
 
-    {
-        "numToStr/Comment.nvim",
-        opts = {
-            mappings = {
-                basic = false,
-                extra = false,
-            },
-        },
-        keys = {
-            { "<leader>a;", "<Plug>(comment_toggle_linewise_visual)", mode = "v", desc = "Toggle Comment" }
-        }
-    },
-
     { "windwp/nvim-autopairs", event = "VeryLazy", config = true },
 
     {
@@ -84,7 +50,6 @@ return {
             { "<leader>bu", "<cmd>UndotreeToggle<cr>", desc = "Toggle Undotree" }
         }
     },
-    { "metakirby5/codi.vim",   cmd = "Codi" },
 
     {
         "folke/which-key.nvim",
