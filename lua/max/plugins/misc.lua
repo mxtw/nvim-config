@@ -9,7 +9,7 @@ return {
             },
             skip_confirm_for_simple_edits = true,
         },
-        cmd = "Oil",
+        lazy = false,
         keys = {
             { "<leader>-", "<cmd>Oil<cr>", desc = "Oil" }
         }
