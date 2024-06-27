@@ -108,11 +108,7 @@ return {
                 callback = function(event)
                     local opts = { noremap = true, silent = true, buffer = event.buf }
 
-                    -- TODO get this to work on nightly
-                    -- local client = vim.lsp.get_client_by_id(event.data.client_id)
-                    -- if client.server_capabilities.inlayHintProvider then
-                    --     vim.lsp.inlay_hint.enable(event.buf, true)
-                    -- end
+                    vim.lsp.inlay_hint.enable(true)
 
                     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
                     vim.keymap.set('n', '<space>cr', vim.lsp.buf.rename, opts)
