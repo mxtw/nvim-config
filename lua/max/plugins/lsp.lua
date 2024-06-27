@@ -149,7 +149,7 @@ return {
                     "eslint",
                     "gopls",
                     "lua_ls",
-                    "pyright",
+                    "basedpyright",
                     "rust_analyzer",
                     "terraformls",
                     "tsserver",
@@ -158,6 +158,18 @@ return {
                 handlers = {
                     default_setup,
                 },
+            })
+
+            require("lspconfig")["basedpyright"].setup({
+                capabilities = lsp_capabilities,
+                on_attach = on_attach,
+                settings = {
+                    basedpyright = {
+                        analysis = {
+                            typeCheckingMode = "basic"
+                        }
+                    }
+                }
             })
 
             vim.api.nvim_create_autocmd(
