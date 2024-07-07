@@ -76,38 +76,4 @@ return {
     },
 
     { "norcalli/nvim-colorizer.lua",  config = true },
-    { "stevearc/dressing.nvim",       event = "VeryLazy", config = true },
-
-    {
-        "folke/twilight.nvim",
-        config = true,
-        cmd = "Twilight",
-        keys = {
-            { "<leader>zt", "<cmd>Twilight<cr>", desc = "Toggle Twilight" },
-        },
-    },
-
-    {
-        "folke/zen-mode.nvim",
-        opts = {
-            window = {
-                width = 90,
-                options = {
-                    number = true,
-                    relativenumber = true,
-                }
-            },
-            plugins = {
-                gitsigns = {
-                    enabled = true
-                },
-            },
-        },
-        cmd = "ZenMode",
-        keys = {
-            { "<leader>zz", "<cmd>ZenMode<cr>", desc = "Toggle Zen Mode" },
-        },
-    },
-
-    "MunifTanjim/nui.nvim",
 }
