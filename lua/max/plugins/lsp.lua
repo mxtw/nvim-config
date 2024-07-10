@@ -14,7 +14,6 @@ return {
             { "hrsh7th/cmp-buffer" },
             { "hrsh7th/cmp-path" },
             { "saadparwaiz1/cmp_luasnip" },
-            { "ray-x/lsp_signature.nvim" },
         },
         config = function()
             local cmp = require("cmp")
@@ -108,7 +107,7 @@ return {
                 callback = function(event)
                     local opts = { noremap = true, silent = true, buffer = event.buf }
 
-                    vim.lsp.inlay_hint.enable(true)
+                    -- vim.lsp.inlay_hint.enable(true)
 
                     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
                     vim.keymap.set('n', '<space>cr', vim.lsp.buf.rename, opts)
@@ -125,9 +124,9 @@ return {
             })
 
             local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-            local lsp_signature = require("lsp_signature").setup({
-                hint_prefix = "> "
-            })
+            -- local lsp_signature = require("lsp_signature").setup({
+            --     hint_prefix = "> "
+            -- })
 
             local on_attach = function(client, bufnr)
                 lsp_format.on_attach(client, bufnr)

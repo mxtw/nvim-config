@@ -34,6 +34,9 @@ return {
 
     {
         "folke/noice.nvim",
+        dependencies = {
+            "MunifTanjim/nui.nvim"
+        },
         opts = {
             lsp = {
                 -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -43,16 +46,19 @@ return {
                     ["cmp.entry.get_documentation"] = true,
                 },
                 hover = {
-                    enabled = false
+                    enabled = true,
+                    view = "split"
                 },
                 signature = {
-                    enabled = false
+                    -- TODO: make sure split stays opened while typing
+                    enabled = true,
+                    view = "split"
                 }
             },
             presets = {
                 -- bottom_search = true,         -- use a classic bottom cmdline for search
                 long_message_to_split = true, -- long messages will be sent to a split
-                lsp_doc_border = true,        -- add a border to hover docs and signature help
+                -- lsp_doc_border = true,        -- add a border to hover docs and signature help
             },
             cmdline = {
                 -- view = "cmdline",
