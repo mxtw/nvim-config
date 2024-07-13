@@ -107,7 +107,10 @@ return {
                 callback = function(event)
                     local opts = { noremap = true, silent = true, buffer = event.buf }
 
-                    -- vim.lsp.inlay_hint.enable(true)
+                    vim.lsp.inlay_hint.enable(true)
+                    vim.keymap.set('n', '<space>ch', function()
+                        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+                    end, opts)
 
                     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
                     vim.keymap.set('n', '<space>cr', vim.lsp.buf.rename, opts)
