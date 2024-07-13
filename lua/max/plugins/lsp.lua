@@ -92,6 +92,7 @@ return {
             { "hrsh7th/cmp-nvim-lsp" },
             { "williamboman/mason-lspconfig.nvim" },
             { "lukas-reineke/lsp-format.nvim" },
+            { "ray-x/lsp_signature.nvim" },
         },
         config = function()
             local lsp_format = require("lsp-format")
@@ -127,9 +128,10 @@ return {
             })
 
             local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-            -- local lsp_signature = require("lsp_signature").setup({
-            --     hint_prefix = "> "
-            -- })
+            local lsp_signature = require("lsp_signature").setup({
+                hint_prefix = "> ",
+                floating_window = false
+            })
 
             local on_attach = function(client, bufnr)
                 lsp_format.on_attach(client, bufnr)

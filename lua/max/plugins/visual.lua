@@ -49,7 +49,7 @@ return {
                     enabled = true,
                 },
                 signature = {
-                    enabled = true,
+                    enabled = false,
                 }
             },
             presets = {
