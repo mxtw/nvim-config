@@ -47,18 +47,15 @@ return {
                 },
                 hover = {
                     enabled = true,
-                    view = "split"
                 },
                 signature = {
-                    -- TODO: make sure split stays opened while typing
                     enabled = true,
-                    view = "split"
                 }
             },
             presets = {
                 -- bottom_search = true,         -- use a classic bottom cmdline for search
                 long_message_to_split = true, -- long messages will be sent to a split
-                -- lsp_doc_border = true,        -- add a border to hover docs and signature help
+                lsp_doc_border = true,        -- add a border to hover docs and signature help
             },
             cmdline = {
                 -- view = "cmdline",
