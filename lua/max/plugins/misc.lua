@@ -74,9 +74,6 @@ return {
         end
     },
 
-        end
-    },
-
     {
         "luckasRanarison/nvim-devdocs",
         dependencies = {
