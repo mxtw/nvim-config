@@ -57,24 +57,23 @@ return {
         config = function()
             local wk = require("which-key")
 
-            wk.register({
-                a = { name = "actions" },
-                b = { name = "buffer" },
-                c = { name = "code" },
-                d = { name = "debug" },
-                f = { name = "file" },
-                g = { name = "git" },
-                h = { name = "help" },
-                n = { name = "notes" },
-                o = { name = "open" },
-                q = { name = "quit" },
-                w = { name = "window" },
-                z = { name = "zen" },
-            }, { prefix = "<leader>" })
+            wk.add({
+                { "<leader>a", group = "actions", mode = { "n", "v" } },
+                { "<leader>b", group = "buffer" },
+                { "<leader>c", group = "code" },
+                { "<leader>d", group = "debug" },
+                { "<leader>f", group = "file" },
+                { "<leader>g", group = "git" },
+                { "<leader>h", group = "help" },
+                { "<leader>n", group = "notes" },
+                { "<leader>o", group = "open" },
+                { "<leader>q", group = "quit" },
+                { "<leader>w", group = "window" },
+                { "<leader>z", group = "zen" },
+            })
+        end
+    },
 
-            wk.register({
-                a = { name = "actions" }
-            }, { prefix = "<leader>", mode = "v" })
         end
     },
 
