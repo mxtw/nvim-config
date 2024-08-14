@@ -42,7 +42,6 @@ return {
                 "<leader><space>",
                 function()
                     builtin = require("telescope.builtin")
-                    local opts = {} -- define here if you want to define something
                     is_inside_work_tree = {}
 
                     local cwd = vim.fn.getcwd()
@@ -52,9 +51,9 @@ return {
                     end
 
                     if is_inside_work_tree[cwd] then
-                        builtin.git_files(opts)
+                        builtin.git_files({ show_untracked = true })
                     else
-                        builtin.find_files(opts)
+                        builtin.find_files({})
                     end
                 end,
                 desc = "Fuzzy Find Files"
