@@ -146,5 +146,22 @@ return {
 
     { 'wakatime/vim-wakatime', lazy = false },
 
+    {
+        "aserowy/tmux.nvim",
+        config = function()
+            local tmux = require("tmux")
+
+            tmux.setup({
+                navigation = {
+                    enable_default_keybinds = false
+                }
+            })
+
+            vim.keymap.set("n", "<M-Left>", function() tmux.move_left() end)
+            vim.keymap.set("n", "<M-Right>", function() tmux.move_right() end)
+            vim.keymap.set("n", "<M-Up>", function() tmux.move_up() end)
+            vim.keymap.set("n", "<M-Down>", function() tmux.move_down() end)
+        end,
+        lazy = false,
     }
 }
