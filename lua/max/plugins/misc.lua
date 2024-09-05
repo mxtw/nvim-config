@@ -159,8 +159,8 @@ return {
 
             vim.keymap.set("n", "<M-Left>", function() tmux.move_left() end)
             vim.keymap.set("n", "<M-Right>", function() tmux.move_right() end)
-            vim.keymap.set("n", "<M-Up>", function() tmux.move_up() end)
-            vim.keymap.set("n", "<M-Down>", function() tmux.move_down() end)
+            vim.keymap.set("n", "<M-Up>", function() tmux.move_top() end)
+            vim.keymap.set("n", "<M-Down>", function() tmux.move_bottom() end)
         end,
         lazy = false,
     }
