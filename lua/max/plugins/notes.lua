@@ -1,4 +1,14 @@
 return {
+
+    {
+        {
+            'MeanderingProgrammer/render-markdown.nvim',
+            ft = "markdown",
+            opts = {},
+            dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+        }
+    },
+
     {
         "epwalsh/obsidian.nvim",
         ft = "markdown",
@@ -6,6 +16,9 @@ return {
             "nvim-lua/plenary.nvim",
         },
         opts = {
+            ui = {
+                enable = false,
+            },
             workspaces = {
                 {
                     name = "notes",
