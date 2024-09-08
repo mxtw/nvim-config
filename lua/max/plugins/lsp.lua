@@ -156,7 +156,7 @@ return {
                     "basedpyright",
                     "rust_analyzer",
                     "terraformls",
-                    "tsserver",
+                    "ts_ls",
                     "yamlls",
                 },
                 handlers = {
