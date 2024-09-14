@@ -214,9 +214,9 @@ return {
         "folke/trouble.nvim",
         config = true,
         keys = {
-            { "<leader>ct", "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" }
+            { "<leader>ct", "<cmd>Trouble diagnostics toggle<cr>", desc = "Toggle Trouble" }
         },
-        cmd = "TroubleToggle"
+        cmd = "Trouble"
     },
 
     -- filetype specifics
