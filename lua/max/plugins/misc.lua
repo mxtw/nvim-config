@@ -163,5 +163,30 @@ return {
             vim.keymap.set("n", "<M-Down>", function() tmux.move_bottom() end)
         end,
         lazy = false,
+    },
+    {
+        "folke/snacks.nvim",
+        lazy = false,
+        opts = {
+            lazygit = {}
+        },
+        keys = {
+            {
+                "<leader>gg",
+                function() require("snacks").lazygit.open() end,
+                desc = "open lazygit"
+            },
+            {
+                "<leader>gl",
+                function() require("snacks").lazygit.log() end,
+                desc = "view git log"
+            },
+            {
+                "<leader>gL",
+                function() require("snacks").lazygit.log_file() end,
+                desc = "view git log for current file"
+            }
+        }
     }
+
 }

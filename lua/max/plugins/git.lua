@@ -26,15 +26,5 @@ return {
         keys = {
             { "<leader>dg", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
         }
-    },
-    {
-        "kdheepak/lazygit.nvim",
-        event = "VeryLazy",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-        keys = {
-            { "<leader>gg", "<cmd>LazyGitCurrentFile<cr>", desc = "Open Lazygit" },
-        }
-    },
+    }
 }
